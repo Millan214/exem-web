@@ -31,6 +31,7 @@ function App() {
   return (
     <>
       <button onClick={registrarse}>hola</button>
+      <h1>Holiiiqui</h1>
     </>
   );
 }
