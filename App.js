@@ -33,7 +33,7 @@ function App() {
       <button onClick={registrarse}>hola</button>
       <h1>Holiiiqui</h1>
       <h2>hola que tal</h2>
-      <h3>cosas</h3>
+      <h3>cosas nasis</h3>
     </>
   );
 }
