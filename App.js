@@ -32,6 +32,7 @@ function App() {
     <>
       <button onClick={registrarse}>hola</button>
       <h1>Holiiiqui</h1>
+      <h2>hola que tal</h2>
     </>
   );
 }
