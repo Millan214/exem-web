@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import MainIcon from "../icons/MainIcon"
 import NavBarLink from "./NavBarLink"
 
 const SNavBar = styled.nav`
@@ -14,15 +13,15 @@ const SNavBar = styled.nav`
 `
 
 const SNavBarLeft = styled.div`
-
+    display: flex;
 `
 
 const SNavBarCenter = styled.div`
-
+    display: flex;
 `
 
 const SNavBarRight = styled.div`
-
+    display: flex;
 `
 // <MainIcon fill="#632F19" />
 
@@ -30,9 +29,13 @@ const NavBar = () => {
     return (
         <SNavBar>
             <SNavBarLeft>
+                <NavBarLink to="/">enlace</NavBarLink>
             </SNavBarLeft>
             <SNavBarCenter>
-                <NavBarLink to="/">enlace</NavBarLink>
+                <NavBarLink to="/">formación</NavBarLink>
+                <NavBarLink to="/">servicios</NavBarLink>
+                <NavBarLink to="/">productos</NavBarLink>
+                <NavBarLink to="/">¿quienes somos?</NavBarLink>
             </SNavBarCenter>
             <SNavBarRight>
                 <NavBarLink to="/">enlace</NavBarLink>

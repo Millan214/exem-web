@@ -7,6 +7,8 @@ const SNavBarLink = styled.div`
     font-size: 20px;
     color: var(--font-color-dark);
     text-transform: uppercase;
+    display: flex;
+    margin: 0 20px;
 `
 
 const NavBarLink = props => {
