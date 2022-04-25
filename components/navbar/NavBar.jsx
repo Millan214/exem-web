@@ -3,7 +3,6 @@ import MainIcon from "../icons/MainIcon"
 import NavBarLink from "./NavBarLink"
 
 const SNavBar = styled.nav`
-    background: var(--color1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,6 +10,11 @@ const SNavBar = styled.nav`
     padding: 10px;
 
     box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+    width: 100%;
+    z-index: 1;
 `
 
 const SNavBarLeft = styled.div`
@@ -26,9 +30,9 @@ const SNavBarRight = styled.div`
 `
 // <MainIcon fill="#632F19" />
 
-const NavBar = () => {
+const NavBar = ({isScrolling}) => {
     return (
-        <SNavBar>
+        <SNavBar className={`navbar ${isScrolling > 20 ? "scrolling" : null}`}>
             <SNavBarLeft>
             </SNavBarLeft>
             <SNavBarCenter>
