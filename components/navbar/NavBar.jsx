@@ -1,5 +1,12 @@
+import { useContext } from "react"
 import styled from "styled-components"
+import { ScrollOffsetContext } from "../../pages/App"
 import NavBarLink from "./NavBarLink"
+
+const scrollBg = ( offset ) => {
+    if ( offset > 800 ) return `var(--color7)`
+    return 'none'
+}
 
 const SNavBar = styled.nav`
     display: flex;
@@ -8,12 +15,15 @@ const SNavBar = styled.nav`
 
     padding: 10px;
 
-    box-shadow: var(--shadow);
     position: fixed;
     top: 0;
     background-color: transparent;
     width: 100%;
+    box-sizing: border-box;
     z-index: 1;
+
+    background: ${ props => scrollBg(props.offset) };
+    transition: background 1s;
 `
 
 const SNavBarLeft = styled.div`
@@ -29,9 +39,14 @@ const SNavBarRight = styled.div`
 `
 // <MainIcon fill="#632F19" />
 
-const NavBar = ({isScrolling}) => {
+const NavBar = () => {
+
+    
+
+    const offset = useContext(ScrollOffsetContext)
+
     return (
-        <SNavBar className={`navbar ${isScrolling > 20 ? "scrolling" : null}`}>
+        <SNavBar offset={ offset }>
             <SNavBarLeft>
                 <NavBarLink to="/">enlace</NavBarLink>
             </SNavBarLeft>

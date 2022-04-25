@@ -7,7 +7,7 @@
     --color4: #B06F55;
     --color5: #9D5D43;
     --color6: #894B31;
-    --color7: #632F19;
+    --color7: rgb(99, 47, 25);
 
     --bg: #FBFBFB;
 
@@ -26,60 +26,4 @@
 
 body {
     margin: 0;
-}
-
-/*ESTILOS PORTADA(VIDEO)*/
-.cover-container {
-    height: 100vh;
-    width: 100%;
-    /*Siempre mismo ancho en cualquier dispositivo*/
-    object-fit: contain;
-    /*efecto opacidad sobre el video, mas oscuro
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6);*/
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.video {
-    /*Para que ocupe el 100%*/
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    /*Video situado por debajo del covercontainer asi efecto opacidad con boxshadow*/
-    z-index: -1;
-}
-
-.cover-container > h1 {
-    color: white;
-    font-size: 50px;
-}
-
-.cover-container > p {
-    margin-top: 10px;;
-    color: white;
-    font-size: 30px;
-    font-style: italic;
-}
-
-/*RESPONSIVE*/
-@media screen and (max-width: 960px) {
-    .cover-container > h1 {
-        font-size: 70px;
-        text-align: center;
-    }
-    .cover-container > p {
-        text-align: center;
-        font-size: 22px;
-        width: 85%;
-    }
-}
-
-/*NAVBAR*/
-.scrolling {
-    background-color: white;
-    transition: all 0.5s ease;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
