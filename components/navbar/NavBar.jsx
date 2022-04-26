@@ -62,6 +62,8 @@ const SNavBarCenter = styled.div`
         background: var(--color5);
         border-left: 10px solid var(--color6);
 
+        transform: translateX(100%);
+
         right: 0;
         top: 0;
     }
