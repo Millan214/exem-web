@@ -33,3 +33,11 @@ body {
 svg {
     fill: var(--font-color-light);
 }
+
+*{
+    /*Quitar bordes, que ocupe toda la pantalla*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
