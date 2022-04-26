@@ -1,14 +1,17 @@
+import anime from "animejs"
+import { useState } from "react"
 import { useContext } from "react"
 import styled from "styled-components"
 import { ScrollOffsetContext } from "../../pages/App"
+import OpenIcon from "../icons/OpenIcon"
+import X from "../icons/X"
 import NavBarLink from "./NavBarLink"
 
-const scrollBg = ( offset ) => {
-    if ( offset > 800 ) return `var(--color7)`
-    return 'none'
-}
-
-const SNavBar = styled.nav`
+const SNavBar = styled.nav.attrs(props => ({
+    style: {
+        background: `rgba(98, 47, 24,${ props.offset/1000 })`
+    }
+}))`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,8 +25,11 @@ const SNavBar = styled.nav`
     box-sizing: border-box;
     z-index: 1;
 
-    background: ${ props => scrollBg(props.offset) };
-    transition: background 1s;
+    transition: transform .5s;
+
+    @media (min-width: 1000px) {
+        transform: ${ props => props.scrollDir == 'up' ? 'translateY(0)' : 'translateY(-100%)'};
+    }
 `
 
 const SNavBarLeft = styled.div`
@@ -32,25 +38,113 @@ const SNavBarLeft = styled.div`
 
 const SNavBarCenter = styled.div`
     display: flex;
+
+    @media (min-width: 1000px) {
+        transform: translateX(0) !important;
+    }
+
+    @media (max-width: 1000px) {
+        position: fixed;
+
+        flex-direction: column;
+
+        height: 100vh;
+
+        padding: 20px;
+        padding-top: 40px;
+        padding-right: 40px;
+
+        & div {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        background: var(--color5);
+        border-left: 10px solid var(--color6);
+
+        right: 0;
+        top: 0;
+    }
+
+    @media (max-width: 450px) {
+        border: none;
+        width: 100%;
+        padding: 20px;
+        padding-right: 40px;
+        box-sizing: border-box;
+        margin: 0;
+    }
+
 `
 
 const SNavBarRight = styled.div`
     display: flex;
 `
+
+const SCloseIcon = styled.div`
+    display: flex;
+    transition: transform .5s;
+
+    @media (max-width: 1000px) {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+    @media (min-width: 1000px) {
+        display: none;
+    }
+
+    &:hover {
+        transform: rotate(90deg);
+    }
+
+    svg {
+        fill: var(--font-color-light);
+    }
+`
+
+const SOpenIcon = styled.div`
+    display: flex;
+    cursor: pointer;
+
+    @media (min-width: 1000px) {
+        display: none;
+    }
+
+`
+
 // <MainIcon fill="#632F19" />
 
 const NavBar = () => {
 
-    
-
     const offset = useContext(ScrollOffsetContext)
 
+    const openSidebar = () => {
+        anime({
+            targets: '#navBarCenter',
+            translateX: '100%',
+            easing: 'easeInOutQuad'
+        })
+    }
+    
+    const closeSidebar = () => {
+        anime({
+            targets: '#navBarCenter',
+            translateX: '0',
+            easing: 'easeInOutQuad'
+        })
+    }
+
     return (
-        <SNavBar offset={ offset }>
+        <SNavBar { ...offset } >
             <SNavBarLeft>
                 <NavBarLink to="/">enlace</NavBarLink>
             </SNavBarLeft>
-            <SNavBarCenter>
+            <SNavBarCenter id="navBarCenter">
+                <SCloseIcon onClick={ () => openSidebar() }>
+                    <X />
+                </SCloseIcon>
                 <NavBarLink to="/">formación</NavBarLink>
                 <NavBarLink to="/">servicios</NavBarLink>
                 <NavBarLink to="/">productos</NavBarLink>
@@ -58,6 +152,9 @@ const NavBar = () => {
             </SNavBarCenter>
             <SNavBarRight>
                 <NavBarLink to="/">enlace</NavBarLink>
+                <SOpenIcon onClick={ () => closeSidebar() }>
+                    <OpenIcon />
+                </SOpenIcon>
             </SNavBarRight>
         </SNavBar>
     )
