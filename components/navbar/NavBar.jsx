@@ -1,6 +1,7 @@
 import anime from "animejs"
 import { useState } from "react"
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { ScrollOffsetContext } from "../../pages/App"
 import OpenIcon from "../icons/OpenIcon"
@@ -26,12 +27,8 @@ const SNavBar = styled.nav.attrs(props => ({
     z-index: 1;
 
     transition: transform .5s;
-
+    
     z-index: 100;
-
-    @media (min-width: 1000px) {
-        transform: ${ props => props.scrollDir == 'up' ? 'translateY(0)' : 'translateY(-100%)'};
-    }
 `
 
 const SNavBarLeft = styled.div`
@@ -144,13 +141,20 @@ const NavBar = () => {
     return (
         <SNavBar { ...offset } >
             <SNavBarLeft>
-                <NavBarLink to="/">enlace</NavBarLink>
+                <NavBarLink to="/">exem</NavBarLink>
             </SNavBarLeft>
             <SNavBarCenter id="navBarCenter">
                 <SCloseIcon onClick={ () => openSidebar() }>
                     <X />
                 </SCloseIcon>
-                <NavBarLink to="/">formación</NavBarLink>
+                <NavBarLink to="/"
+                    desplegable = {<>
+                        <Link to="/">cursos</Link>
+                        <Link to="/">talleres</Link>
+                    </>}
+                >
+                    formación
+                </NavBarLink>
                 <NavBarLink to="/">servicios</NavBarLink>
                 <NavBarLink to="/">productos</NavBarLink>
                 <NavBarLink to="/">¿quienes somos?</NavBarLink>
