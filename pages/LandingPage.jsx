@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FlowerBox, FlowerBoxWrapper } from "../components/animations/FlowerBox";
 import IntroAnimation from "../components/animations/IntroAnimation";
 import { FlexLayout } from "../components/layouts/FlexLayout";
 import { ScreenHeightLayout } from "../components/layouts/ScreenHeightLayout";
@@ -59,30 +60,66 @@ const ImgCursos = styled.div`
 const LandingPage = () => {
 
   return (
-    <>
-      <SVideo src={ coverVideo } autoPlay loop muted />
+    <div>
+      <SVideo src={coverVideo} autoPlay loop muted />
+
       <SVideoContent>
-        <IntroAnimation numPetalos = { 7 } />
+        <IntroAnimation numPetalos={7} />
       </SVideoContent>
+
       <svg viewBox="0 0 1920 188" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 141V0H1920V178.5C1766.17 131.167 1365.8 57.4 995 141C624.2 224.6 177.167 175.833 0 141Z" fill="var(--color1)"/>
+        <path d="M0 141V0H1920V178.5C1766.17 131.167 1365.8 57.4 995 141C624.2 224.6 177.167 175.833 0 141Z" fill="var(--color1)" />
       </svg>
+
       <SideMarginsLayout>
         <ScreenHeightLayout>
-          <FlexLayout vcenter hcenter fullheight>
-            <h1>jamon</h1>
+          <FlexLayout vAlgin={'center'} hAlgin={'center'} fullheight wrap>
+            <FlowerBox
+              content = {<>
+                10
+              </>}
+              text = {<>
+                años de experiencia
+              </>}
+            />
+            <FlowerBox
+              content = {<>
+                34
+              </>}
+              text = {<>
+                masajes distintos
+              </>}
+            />
+            <FlowerBox
+              content = {<>
+                12
+              </>}
+              text = {<>
+                cursos
+              </>}
+            />
+            <FlowerBox
+              content = {<>
+                20
+              </>}
+              text = {<>
+                años de experiencia
+              </>}
+            />
           </FlexLayout>
         </ScreenHeightLayout>
-        <CardContainer>	
-        <TopCursos>
-            <h1>Cursos más venidos</h1>
-         </TopCursos>
-         <ImgCursos>
-            <img src="https://cdn.pixabay.com/photo/2018/11/05/09/53/massage-3795691_960_720.jpg" alt="top-cursos"/>
-          </ImgCursos>
-        </CardContainer>
       </SideMarginsLayout>
-    </>
+
+      <CardContainer>
+        <TopCursos>
+          <h1>Cursos más venidos</h1>
+        </TopCursos>
+        <ImgCursos>
+          <img src="https://cdn.pixabay.com/photo/2018/11/05/09/53/massage-3795691_960_720.jpg" alt="top-cursos" />
+        </ImgCursos>
+      </CardContainer>
+
+    </div>
   );
 };
 
