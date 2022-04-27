@@ -9,7 +9,7 @@ import NavBarLink from "./NavBarLink"
 
 const SNavBar = styled.nav.attrs(props => ({
     style: {
-        background: `rgba(98, 47, 24,${ props.offset/1000 })`
+        background: `rgba(137, 75, 49,${ props.offset/1000 })`
     }
 }))`
     display: flex;
@@ -27,6 +27,8 @@ const SNavBar = styled.nav.attrs(props => ({
 
     transition: transform .5s;
 
+    z-index: 100;
+
     @media (min-width: 1000px) {
         transform: ${ props => props.scrollDir == 'up' ? 'translateY(0)' : 'translateY(-100%)'};
     }
@@ -38,6 +40,7 @@ const SNavBarLeft = styled.div`
 
 const SNavBarCenter = styled.div`
     display: flex;
+    gap: 20px;
 
     @media (min-width: 1000px) {
         transform: translateX(0) !important;

@@ -23,7 +23,6 @@ const SNavBarLink = styled.div`
 `
 
 const SNavBarLinkWrapper = styled.div`
-    margin: 0 10px;
     &:hover ${SNavBarLinkUnderline}{
         width: 100%;
     }
