@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --color: rgb(227, 193, 193);
+    --color: #e3c1c1;
+    --secundario1: #E88780;
 
-    --color1: rgb(249, 243, 241);
-    --color2: rgb(244, 205, 189);
-    --color3: rgb(233, 185, 165);
-    --color4: rgb(176, 111, 85);
-    --color5: rgb(157, 93, 67);
-    --color6: rgb(137, 75, 49);
-    --color7: rgb(98, 47, 24);
+    --color1: #f9f3f1;
+    --color2: #f4cdbd;
+    --color3: #e9b9a5;
+    --color4: #b06f55;
+    --color5: #9d5d43;
+    --color6: #894b31;
+    --color7: #633018;
 
     --bg: #FBFBFB;
 
@@ -29,6 +30,7 @@
 body {
     margin: 0;
     background: var(--bg);
+    
 }
 
 svg {
@@ -41,4 +43,3 @@ svg {
     padding: 0;
     box-sizing: border-box;
 }
-
