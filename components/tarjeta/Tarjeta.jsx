@@ -55,7 +55,7 @@ const SBarra = styled.div`
     height: 15px;
     background: var(--color6);
     box-shadow: var(--shadow);
-    transform:  translateY(-850%) rotate(-10deg);
+    transform:  translateY(-950%) rotate(-10deg);
     z-index: -1;
 `
 
