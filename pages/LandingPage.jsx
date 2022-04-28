@@ -5,6 +5,9 @@ import { FlexLayout } from "../components/layouts/FlexLayout";
 import { ScreenHeightLayout } from "../components/layouts/ScreenHeightLayout";
 import { SideMarginsLayout } from "../components/layouts/SideMarginsLayout";
 import coverVideo from "../components/media/coverVideo.mp4";
+import Tarjeta from "../components/tarjeta/Tarjeta";
+import Person from '../components/media/person.jpg';
+import Titulo from "../components/titulos/Titulo";
 
 const SVideo = styled.video`
   position: absolute;
@@ -73,39 +76,41 @@ const LandingPage = () => {
 
       <SideMarginsLayout>
         <ScreenHeightLayout>
-          <FlexLayout vAlgin={'center'} hAlgin={'center'} fullheight wrap>
-            <FlowerBox
-              content = {<>
-                10
-              </>}
-              text = {<>
-                años de experiencia
-              </>}
-            />
-            <FlowerBox
-              content = {<>
-                34
-              </>}
-              text = {<>
-                masajes distintos
-              </>}
-            />
-            <FlowerBox
-              content = {<>
-                12
-              </>}
-              text = {<>
-                cursos
-              </>}
-            />
-            <FlowerBox
-              content = {<>
-                20
-              </>}
-              text = {<>
-                años de experiencia
-              </>}
-            />
+          <FlexLayout vAlgin={'center'} hAlgin={'center'} fullheight>
+            <FlexLayout hAlgin={'center'} wrap>
+              <FlowerBox
+                content={<>
+                  10
+                </>}
+                text={<>
+                  años de experiencia
+                </>}
+              />
+              <FlowerBox
+                content={<>
+                  34
+                </>}
+                text={<>
+                  masajes distintos
+                </>}
+              />
+              <FlowerBox
+                content={<>
+                  12
+                </>}
+                text={<>
+                  cursos
+                </>}
+              />
+              <FlowerBox
+                content={<>
+                  20
+                </>}
+                text={<>
+                  años de experiencia
+                </>}
+              />
+            </FlexLayout>
           </FlexLayout>
         </ScreenHeightLayout>
       </SideMarginsLayout>
@@ -118,6 +123,52 @@ const LandingPage = () => {
           <img src="https://cdn.pixabay.com/photo/2018/11/05/09/53/massage-3795691_960_720.jpg" alt="top-cursos" />
         </ImgCursos>
       </CardContainer>
+
+
+      <ScreenHeightLayout>
+        <FlexLayout vAlgin={'center'} hAlgin={'center'} fullheight column>
+          <Titulo>nuestros clientes opinan</Titulo>
+          <FlexLayout hAlgin={'center'} wrap>
+
+            <Tarjeta
+              imagen={Person}
+              nombre='Guillermo Rauch'
+              correo='guillermorauch@gmail.com'
+              comentario='Me siento muy bien atendida por parte de Jesica siempre atenta y amable.'
+            />
+
+            <Tarjeta
+              imagen={Person}
+              nombre='Guillermo Rauch'
+              correo='guillermorauch@gmail.com'
+              comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
+            />
+            
+            <Tarjeta
+              imagen={Person}
+              nombre='Guillermo Rauch'
+              correo='guillermorauch@gmail.com'
+              comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
+            />
+
+            <Tarjeta
+              imagen={Person}
+              nombre='Guillermo Rauch'
+              correo='guillermorauch@gmail.com'
+              comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
+            />
+
+            <Tarjeta
+              imagen={Person}
+              nombre='Guillermo Rauch'
+              correo='guillermorauch@gmail.com'
+              comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
+            />
+
+          </FlexLayout>
+        </FlexLayout>
+      </ScreenHeightLayout>
+
 
     </div>
   );

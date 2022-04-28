@@ -7,7 +7,7 @@ const SWrapper = styled.div`
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin: 0 50px;
+    margin: 50px;
 `
 
 const SBackgroundPetal = styled.div`
