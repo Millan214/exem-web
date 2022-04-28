@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/NavBar";
 
 import './styles.css';
@@ -21,6 +22,9 @@ const App = () => {
     <ScrollOffsetContext.Provider value={ { offset } }>
       <NavBar />
       <Outlet />
+      <Footer>
+        <h1>jose</h1>
+      </Footer>
     </ScrollOffsetContext.Provider>
   );
 }
