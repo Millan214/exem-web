@@ -59,4 +59,5 @@ export const FlexLayout = styled.div`
     align-items: ${ props => verticalAlign( props.vAlgin ) };
     justify-content: ${ props => horizontalAlign( props.hAlgin ) };
     height: ${ props => props.fullheight ? '100%' : 'auto' };
+    flex-direction: ${ props => props.column ? 'column' : 'row' };
 `

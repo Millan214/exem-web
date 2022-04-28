@@ -30,7 +30,6 @@
 body {
     margin: 0;
     background: var(--bg);
-    
 }
 
 svg {
@@ -42,4 +41,9 @@ svg {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--font-color-dark);
+    color: var(--font-color-light);
 }

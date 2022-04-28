@@ -109,6 +109,7 @@ const SCloseIcon = styled.div`
 const SOpenIcon = styled.div`
     display: flex;
     cursor: pointer;
+    margin-left: 20px;
 
     @media (min-width: 1000px) {
         display: none;
