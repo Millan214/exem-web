@@ -7,7 +7,9 @@ import { SideMarginsLayout } from "../components/layouts/SideMarginsLayout";
 import coverVideo from "../components/media/coverVideo.mp4";
 import Tarjeta from "../components/tarjeta/Tarjeta";
 import Person from '../components/media/person.jpg';
+import Mas1 from '../components/media/mas1.jpg';
 import Titulo from "../components/titulos/Titulo";
+import TarjetaGrande from "../components/tarjeta/TarjetaGrande";
 
 const SVideo = styled.video`
   position: absolute;
@@ -76,8 +78,8 @@ const LandingPage = () => {
 
       <SideMarginsLayout>
         <ScreenHeightLayout>
-          <FlexLayout vAlgin={'center'} hAlgin={'center'} fullheight>
-            <FlexLayout hAlgin={'center'} wrap>
+          <FlexLayout vAlign={'center'} hAlign={'center'} fullheight>
+            <FlexLayout hAlign={'center'} wrap>
               <FlowerBox
                 content={<>
                   10
@@ -124,11 +126,20 @@ const LandingPage = () => {
         </ImgCursos>
       </CardContainer>
 
+      <SideMarginsLayout>
+        <ScreenHeightLayout>
+          <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
+            <TarjetaGrande enter={ 'pide cita ahora' } img={ Mas1 }>
+              disfruta de nuestros masajes profesionales
+            </TarjetaGrande>
+          </FlexLayout>
+        </ScreenHeightLayout>
+      </SideMarginsLayout>
 
       <ScreenHeightLayout>
-        <FlexLayout vAlgin={'center'} hAlgin={'center'} fullheight column>
-          <Titulo>nuestros clientes opinan</Titulo>
-          <FlexLayout hAlgin={'center'} wrap>
+        <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
+          <Titulo>reseñas de nuestros clientes</Titulo>
+          <FlexLayout hAlign={'center'} wrap>
 
             <Tarjeta
               imagen={Person}
@@ -143,7 +154,7 @@ const LandingPage = () => {
               correo='guillermorauch@gmail.com'
               comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
             />
-            
+
             <Tarjeta
               imagen={Person}
               nombre='Guillermo Rauch'
@@ -168,7 +179,6 @@ const LandingPage = () => {
           </FlexLayout>
         </FlexLayout>
       </ScreenHeightLayout>
-
 
     </div>
   );
