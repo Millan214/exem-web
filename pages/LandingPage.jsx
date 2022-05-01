@@ -146,8 +146,7 @@ const LandingPage = () => {
               </FlexLayout>
               <FlexLayout vAlign='center' hAlign='center' fullHeight>
                 <CiruclarImage
-                  size={window.innerWidth / 4}
-                  screenSize
+                  scale={4}
                   img={Person}
                   alt="person"
                 >
@@ -173,11 +172,10 @@ const LandingPage = () => {
           <FlexLayout hAlign='center' vAlign='center' column>
             <Titulo>top cursos</Titulo>
             <HalfLayout>
-              
+
               <FlexLayout vAlign='center' hAlign='center' fullHeight>
                 <CiruclarImage
-                  size={window.innerWidth / 4}
-                  screenSize
+                  scale={4}
                   img={Person}
                   alt="person"
                 >
@@ -193,7 +191,7 @@ const LandingPage = () => {
                   <ListaItem>Anticelulítico</ListaItem>
                 </Lista>
               </FlexLayout>
-              
+
             </HalfLayout>
           </FlexLayout>
         </FlexLayout>
