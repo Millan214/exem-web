@@ -1,5 +1,5 @@
 import anime from "animejs"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import styled from "styled-components"
 import ExemTextIcon from "../icons/ExemTextIcon"
 import Meditation from "../icons/Meditation"
@@ -52,10 +52,9 @@ const SDownIcon = styled.svg`
 `
 
 const IntroAnimation = props => {
-
+    /*
     const [petalos, setPetalos] = useState([])
 
-    /** Ahora mismo no se usa */
     const cargarPetalos = () => {
         let petarray = []
 
@@ -70,10 +69,10 @@ const IntroAnimation = props => {
 
         setPetalos(petarray)
     }
-
+    */
     useEffect(() => {
 
-        cargarPetalos()
+        //cargarPetalos()
 
         anime({
             targets: '.petaloAnim',
@@ -149,7 +148,7 @@ const IntroAnimation = props => {
 
             <SDownIcon>
                 <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    <path fillRule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
             </SDownIcon>
 

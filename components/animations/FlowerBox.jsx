@@ -79,7 +79,7 @@ export const FlowerBox = props => {
                 easing: 'linear',
                 loop: true,
                 autoplay: true,
-                duration: 10000
+                duration: 20000
             })
             anime({
                 targets: '.sForegroundPetal',
@@ -87,7 +87,7 @@ export const FlowerBox = props => {
                 easing: 'linear',
                 loop: true,
                 autoplay: true,
-                duration: 10000
+                duration: 20000
             })
         }
     })
