@@ -1,18 +1,22 @@
 import anime from "animejs"
-import { useState } from "react"
 import { useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import styled from "styled-components"
 import { ScrollOffsetContext } from "../../pages/App"
 import OpenIcon from "../icons/OpenIcon"
 import X from "../icons/X"
 import NavBarLink from "./NavBarLink"
 
-const SNavBar = styled.nav.attrs(props => ({
-    style: {
-        background: `rgba(137, 75, 49,${ props.offset/1000 })`
-    }
-}))`
+const SNavBar = styled.nav.attrs(props => props.location === "/" ? ({
+        style: {
+            background: `rgba(137, 75, 49,${ props.offset/1000 })`
+        }
+    }) : ({
+        style: {
+            background: `var(--color6)`
+        }
+    })
+)`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -121,6 +125,8 @@ const SOpenIcon = styled.div`
 
 const NavBar = () => {
 
+    const location = useLocation()
+
     const offset = useContext(ScrollOffsetContext)
 
     const openSidebar = () => {
@@ -140,7 +146,7 @@ const NavBar = () => {
     }
 
     return (
-        <SNavBar { ...offset } >
+        <SNavBar { ...offset } location = { location.pathname } >
             <SNavBarLeft>
                 <NavBarLink to="/">exem</NavBarLink>
             </SNavBarLeft>
@@ -150,14 +156,14 @@ const NavBar = () => {
                 </SCloseIcon>
                 <NavBarLink to="/"
                     desplegable = {<>
-                        <Link to="/">cursos</Link>
-                        <Link to="/">talleres</Link>
+                        <Link to="/formacion/cursos">cursos</Link>
+                        <Link to="/formacion/talleres">talleres</Link>
                     </>}
                 >
                     formación
                 </NavBarLink>
                 <NavBarLink to="/">servicios</NavBarLink>
-                <NavBarLink to="/">productos</NavBarLink>
+                <NavBarLink to="/">contacto</NavBarLink>
                 <NavBarLink to="/">¿quienes somos?</NavBarLink>
             </SNavBarCenter>
             <SNavBarRight>

@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import styled from "styled-components"
 
 const STitle = styled.div`
-    width: ${props => props.size ? props.size + 'px' : '300px'};
+    width: 100%;
     text-align: center;
     *{
         overflow: hidden;
@@ -11,21 +11,53 @@ const STitle = styled.div`
     }
 `
 
+const SWrapper = styled.div`
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    padding: ${props => (( (props.size/20) * 2) + 10) + 'px'};
+    width: ${props => props.size ? props.size + 'px' : '300px'};
+    
+
+    &:hover img{
+        //transform: scale(.1);
+        border-radius: 15%;
+    }
+`
+
 const SCustomPetal = styled.div`
     position: absolute;
     border-radius: 15%;
     background: var(--color3);
+    transition: background-color .5s ease-in-out;
+    animation: rotar 20s linear infinite;
+
+    ${SWrapper}:hover &{
+        animation-play-state: paused;
+        background-color: var(--color4);
+    }
+
+    @keyframes rotar {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
 `
 
 const SBody = styled.div`
     display: flex;
-    
+    justify-content: center;
+
     img {
         z-index: 2;
         width: ${props => props.size ? props.size + 'px' : '300px'};
         height: ${props => props.size ? props.size + 'px' : '300px'};
         object-fit: cover;
         border-radius: 50%;
+        transition: border-radius .25s ease-in-out;
         margin-bottom: ${props => props.hasText ? (((props.size / 20 ) * 2) + 10) + 'px' : '0px'};
     }
 
@@ -35,12 +67,6 @@ const SBody = styled.div`
         height: ${props => props.size ? (props.size - (props.size/20)*2) + 'px' : '280px'};
     }
     
-`
-
-const SWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: ${props => (( (props.size/20) * 2) + 10) + 'px'};
 `
 
 /**
@@ -53,14 +79,11 @@ const SWrapper = styled.div`
  */
 const CiruclarImage = props => {
 
-    const [size, setSize] = useState(props.size)
+    const [size, setSize] = useState(window.innerWidth/props.scale)
 
     useEffect(() => {
         window.addEventListener('resize', () => {
-            if(props.screenSize) {
-                setSize(window.innerWidth/4)
-                console.log(size)
-            }
+            setSize(window.innerWidth/props.scale)
         })
     })
 
@@ -68,7 +91,7 @@ const CiruclarImage = props => {
         <SWrapper {...props} size={size}>
             <SBody {...props} size={size}>
                 <img src={ props.img } alt={ props.alt } />
-                <SCustomPetal className="sBackgroundPetal"></SCustomPetal>
+                <SCustomPetal/>
             </SBody>
             <STitle {...props} size={size}>
                 {props.children}
