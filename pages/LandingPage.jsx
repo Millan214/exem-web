@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FlowerBox, FlowerBoxWrapper } from "../components/animations/FlowerBox";
+import { FlowerBox } from "../components/animations/FlowerBox";
 import IntroAnimation from "../components/animations/IntroAnimation";
 import { FlexLayout } from "../components/layouts/FlexLayout";
 import { ScreenHeightLayout } from "../components/layouts/ScreenHeightLayout";
@@ -78,7 +78,7 @@ const LandingPage = () => {
 
       <SideMarginsLayout>
         <ScreenHeightLayout>
-          <FlexLayout vAlign={'center'} hAlign={'center'} fullheight>
+          <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
             <FlexLayout hAlign={'center'} wrap>
               <FlowerBox
                 content={<>
