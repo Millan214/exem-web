@@ -50,15 +50,24 @@ const horizontalAlign = halign => {
  * @param fullHeight    Controla si el elemento debe o no ocupar toda la altura disponible
  *                      La ausencia de esta etiqueta implica que el elemento ocupará la altura por defecto
  * 
+ * @param fullWidth     Controla si el elemento debe o no ocupar toda la anchura disponible
+ * 
+ * @param screenHeight  Controla si el elemento debe o no ocupar toda la altura disponible en pantallas de alto
+ * 
+ * @param screenWidth   Controla si el elemento debe o no ocupar toda la anchura disponible en pantallas de ancho
+ * 
  * @param wrap  Controla si el elemento debe o no ocupar toda la anchura disponible
  * 
  */
 export const FlexLayout = styled.div`
     display: flex;
+    flex-direction: ${ props => props.column ? 'column' : 'row' };
     flex-wrap: ${ props => props.wrap ? 'wrap' : 'nowrap' };
     align-items: ${ props => verticalAlign( props.vAlign ) };
     justify-content: ${ props => horizontalAlign( props.hAlign ) };
-    ${ props => props.fullheight ? 'height: 100%' : 'height: auto' };
-    ${ props => props.screenHeight ? 'height: 100vh' : 'height: auto' };
+    ${ props => props.fullwidth ? 'width: 100%' : 'width: auto' };
+    ${ props => props.screenHeight ? 'height: 100vh !important' : 'height: auto' };
+    ${ props => props.screenWidth ? 'width: 100vw' : 'width: auto' };
+    ${ props => props.fullHeight ? 'height: 100%' : 'height: auto' };
     flex-direction: ${ props => props.column ? 'column' : 'row' };
 `

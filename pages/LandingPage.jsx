@@ -10,6 +10,10 @@ import Person from '../components/media/person.jpg';
 import Mas1 from '../components/media/mas1.jpg';
 import Titulo from "../components/titulos/Titulo";
 import TarjetaGrande from "../components/tarjeta/TarjetaGrande";
+import CiruclarImage from "../components/animations/CiruclarImage";
+import HalfLayout from "../components/layouts/HalfLayout";
+import Lista from "../components/listas/Lista";
+import ListaItem from "../components/listas/ListaItem";
 
 const SVideo = styled.video`
   position: absolute;
@@ -127,13 +131,72 @@ const LandingPage = () => {
       </CardContainer>
 
       <SideMarginsLayout>
+        <FlexLayout hAlign='center' vAlign='center' screenHeight>
+          <FlexLayout hAlign='center' vAlign='center' column>
+            <Titulo>top cursos</Titulo>
+            <HalfLayout>
+              <FlexLayout vAlign='center' hAlign='right' fullHeight>
+                <Lista>
+                  <ListaItem>Quiromasaje profesional</ListaItem>
+                  <ListaItem>Deportivo profesional</ListaItem>
+                  <ListaItem>Reflexología podal</ListaItem>
+                  <ListaItem>Masaje tailandés tradicional</ListaItem>
+                  <ListaItem>Anticelulítico</ListaItem>
+                </Lista>
+              </FlexLayout>
+              <FlexLayout vAlign='center' hAlign='center' fullHeight>
+                <CiruclarImage
+                  size={window.innerWidth / 4}
+                  screenSize
+                  img={Person}
+                  alt="person"
+                >
+                </CiruclarImage>
+              </FlexLayout>
+            </HalfLayout>
+          </FlexLayout>
+        </FlexLayout>
+      </SideMarginsLayout>
+
+      <SideMarginsLayout>
         <ScreenHeightLayout>
           <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
-            <TarjetaGrande enter={ 'pide cita ahora' } img={ Mas1 }>
+            <TarjetaGrande enter={'pide cita ahora'} img={Mas1}>
               disfruta de nuestros masajes profesionales
             </TarjetaGrande>
           </FlexLayout>
         </ScreenHeightLayout>
+      </SideMarginsLayout>
+
+      <SideMarginsLayout>
+        <FlexLayout hAlign='center' vAlign='center' screenHeight>
+          <FlexLayout hAlign='center' vAlign='center' column>
+            <Titulo>top cursos</Titulo>
+            <HalfLayout>
+              
+              <FlexLayout vAlign='center' hAlign='center' fullHeight>
+                <CiruclarImage
+                  size={window.innerWidth / 4}
+                  screenSize
+                  img={Person}
+                  alt="person"
+                >
+                </CiruclarImage>
+              </FlexLayout>
+
+              <FlexLayout vAlign='center' hAlign='right' fullHeight>
+                <Lista>
+                  <ListaItem>Quiromasaje profesional</ListaItem>
+                  <ListaItem>Deportivo profesional</ListaItem>
+                  <ListaItem>Reflexología podal</ListaItem>
+                  <ListaItem>Masaje tailandés tradicional</ListaItem>
+                  <ListaItem>Anticelulítico</ListaItem>
+                </Lista>
+              </FlexLayout>
+              
+            </HalfLayout>
+          </FlexLayout>
+        </FlexLayout>
       </SideMarginsLayout>
 
       <ScreenHeightLayout>
