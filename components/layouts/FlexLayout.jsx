@@ -61,6 +61,7 @@ const horizontalAlign = halign => {
  */
 export const FlexLayout = styled.div`
     display: flex;
+    gap: ${props => props.gap ? props.gap+'px' : '0'};
     flex-direction: ${ props => props.column ? 'column' : 'row' };
     flex-wrap: ${ props => props.wrap ? 'wrap' : 'nowrap' };
     align-items: ${ props => verticalAlign( props.vAlign ) };

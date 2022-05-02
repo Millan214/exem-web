@@ -30,6 +30,7 @@
 body {
     margin: 0;
     background: var(--bg);
+    font-family: 'Montserrat', sans-serif;
 }
 
 svg {
@@ -41,6 +42,7 @@ svg {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ::selection {
