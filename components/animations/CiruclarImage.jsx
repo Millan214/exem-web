@@ -20,8 +20,7 @@ const SWrapper = styled.div`
     
 
     &:hover img{
-        //transform: scale(.1);
-        border-radius: 15%;
+        ${ props => props.hover ? 'border-radius: 15%' : ''};
     }
 `
 
@@ -31,11 +30,6 @@ const SCustomPetal = styled.div`
     background: var(--color3);
     transition: background-color .5s ease-in-out;
     animation: rotar 20s linear infinite;
-
-    ${SWrapper}:hover &{
-        animation-play-state: paused;
-        background-color: var(--color4);
-    }
 
     @keyframes rotar {
         0%{

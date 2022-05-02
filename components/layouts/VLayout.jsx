@@ -1,5 +1,9 @@
 import styled from "styled-components"
 
+/**
+ * @param up:boolean    Define si la dirección es hacia arriba o hacia abajo
+ *                      Con este parámetro la dirección forma una ^ mientras que en su ausencia la forma es v  
+ */
 const VLayout = styled.div`
     display: flex;
     justify-content: space-between;
@@ -14,8 +18,8 @@ const VLayout = styled.div`
         width: 100%;
     }
 
-    & > div:nth-child(odd) {
-        margin-top: 300px;
+    & > div:nth-child( ${ props => props.up ? 'odd' : 'even' } ) {
+        margin-top: 10%;
     }
     
 `

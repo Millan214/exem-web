@@ -14,6 +14,7 @@ import CiruclarImage from "../components/animations/CiruclarImage";
 import HalfLayout from "../components/layouts/HalfLayout";
 import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
+import { useEffect } from "react";
 
 const SVideo = styled.video`
   position: absolute;
@@ -67,6 +68,10 @@ const ImgCursos = styled.div`
 `
 
 const LandingPage = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  })
 
   return (
     <div>
