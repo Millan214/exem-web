@@ -14,16 +14,17 @@ import Subtitulo from "../../../../components/titulos/Subtitulo"
 import Marg from "../../../../components/layouts/Marg"
 import Boton from "../../../../components/clickables/botones/Boton"
 import Enlace from "../../../../components/clickables/enlaces/Enlace"
+import VLayout from "../../../../components/layouts/VLayout"
 
 const STitulo = styled.h1`
-    margin: 25px 0;
+    margin: 0;
     text-transform: uppercase;
     color: var(--color7);
 `
 
 const STitulo2 = styled.h2`
     font-size: 30px;
-    margin: 25px 0;
+    margin: 0;
     color: var(--color6);
 `
 
@@ -111,6 +112,19 @@ const STarjetaHorario = styled.div`
 
 `
 
+const SReservaCarta = styled.div`
+    width: 300px;
+    margin-top: 36px;
+
+    p{
+        color: var(--color6);
+    }
+
+    button{
+        margin-top: 10px;
+    }
+`
+
 /**
  * @param   
  * @returns Component
@@ -183,7 +197,7 @@ const Quiromasaje = props => {
                                     <CiruclarImage
                                         scale={4}
                                         img={Mas3}
-                                        alt="person"
+                                        alt="Mas3"
                                     >
                                     </CiruclarImage>
                                 </FlexLayout>
@@ -282,7 +296,85 @@ const Quiromasaje = props => {
                     </FlexLayout>
 
                 </FlexLayout>
+
+                <Titulo>¡apuntate!</Titulo>
+                <Subtitulo>
+                    Reserva tu plaza
+                </Subtitulo>
+                <Marg px={10} />
+                <Titulo2 center>ahora 199€</Titulo2>
+                <FlexLayout hAlign='between' gap={10} wrap>
+                    <SReservaCarta>
+                        <STitulo2>Turno Dia</STitulo2>
+                        <p>
+                            Este plan es incluye tanto la matrícula como el material necesario para comenzar.
+                        </p>
+                        <FlexLayout hAlign='right'>
+                            <Boton>Reservar</Boton>
+                        </FlexLayout>
+                    </SReservaCarta>
+                    <SReservaCarta>
+                        <STitulo2>Turno Dia</STitulo2>
+                        <p>
+                            Este plan es incluye tanto la matrícula como el material necesario para comenzar.
+                        </p>
+                        <FlexLayout hAlign='right'>
+                            <Boton>Reservar</Boton>
+                        </FlexLayout>
+                    </SReservaCarta>
+                    <SReservaCarta>
+                        <STitulo2>Turno Dia</STitulo2>
+                        <p>
+                            Este plan es incluye tanto la matrícula como el material necesario para comenzar.
+                        </p>
+                        <FlexLayout hAlign='right'>
+                            <Boton>Reservar</Boton>
+                        </FlexLayout>
+                    </SReservaCarta>
+                </FlexLayout>
+
             </SideMarginsLayout>
+
+            <VLayout margTop={100} up>
+
+                <div>
+                    <CiruclarImage
+                        img={Mas3}
+                        alt="Mas3"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Deportivo profesional</h1>
+                    </CiruclarImage>
+                </div>
+
+                <div>
+                    <CiruclarImage
+                        img={Mas3}
+                        alt="Mas3"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Deportivo profesional</h1>
+                    </CiruclarImage>
+                </div>
+
+                <div>
+                    <CiruclarImage
+                        img={Mas3}
+                        alt="Mas3"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Deportivo profesional</h1>
+                    </CiruclarImage>
+                </div>
+
+
+                </VLayout>
         </TopMarginLayout>
     )
 }
