@@ -1,5 +1,7 @@
 import styled from "styled-components"
-import { FaInstagram, FaFacebookSquare } from 'react-icons/fa';
+import { FaInstagram, FaFacebookSquare, FaWhatsapp } from 'react-icons/fa';
+import React from "react";
+import Boton from "../clickables/botones/Boton"
 
 const SFooter = styled.footer`
     display: flex;
@@ -40,6 +42,22 @@ const Item = styled.div`
     line-height : 2em;
 `
 
+export const MensajeFooter = styled.input`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 20em;
+`;
+
+/*Enviar mensaje a WhatsApp de la empres (de momento es mi tlf)*/
+function handleSubmit(e) {
+    e.preventDefault();
+    let mensaje = document.getElementById("mensaje").value
+  
+    let URL= `https://api.whatsapp.com/send?phone=647804790&text=${mensaje}`
+    window.open(URL, "_blank");
+}
+
 const Footer = props => {
     return (
         <SFooter>
@@ -67,14 +85,18 @@ const Footer = props => {
                     </Item>
                     <Item>
                         <p>¡Síguenos! 
-                        <FaInstagram/>                        
-                        <FaFacebookSquare/>
+                            <FaInstagram/>                        
+                            <FaFacebookSquare/>
                         </p>
                     </Item>
                     <Item>
                         <p>Suscríbete a nuestro Newsletter para poder recibir la información
-                             más reciente sobre los cursos, talleres, promociones, etc.</p>
-
+                            más reciente sobre los cursos, talleres, promociones, etc.</p>
+                            <form id="form" onSubmit={handleSubmit}>
+                                <MensajeFooter id="mensaje" value="Hola quiero saber más..."/>
+                                <Boton>Enviar</Boton>
+                            </form>
+                        <FaWhatsapp/>
                     </Item>
                 </SFooterWrapper>
             </SFooterBody>
