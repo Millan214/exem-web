@@ -60,6 +60,10 @@ const SBody = styled.div`
         width: ${props => props.size ? (props.size - (props.size/20)*2) + 'px' : '280px'};
         height: ${props => props.size ? (props.size - (props.size/20)*2) + 'px' : '280px'};
     }
+
+    h1{
+        color: red;
+    }
     
 `
 
