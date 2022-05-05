@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { FaInstagram, FaFacebookSquare, FaWhatsapp } from 'react-icons/fa';
 import React from "react";
 import Boton from "../clickables/botones/Boton"
+import Map from "./Map";
 
 const SFooter = styled.footer`
     display: flex;
@@ -49,16 +50,24 @@ export const MensajeFooter = styled.input`
   width: 20em;
 `;
 
+export const Checkbox = styled.input`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+`;
+
 /*Enviar mensaje a WhatsApp de la empres (de momento es mi tlf)*/
 function handleSubmit(e) {
     e.preventDefault();
     let mensaje = document.getElementById("mensaje").value
-  
-    let URL= `https://api.whatsapp.com/send?phone=647804790&text=${mensaje}`
-    window.open(URL, "_blank");
+
+        let URL= `https://api.whatsapp.com/send?phone=647804790&text=${mensaje}`
+        window.open(URL, "_blank");
 }
 
+
 const Footer = props => {
+
     return (
         <SFooter>
             <svg  viewBox="0 0 1920 234" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,6 +85,7 @@ const Footer = props => {
                     </Item>
                     <Item>
                         <p>Dirección: C. de Ercilla, 47, 28005 Madrid</p>
+                        <Map/>
                     </Item>
                     <Item>
                         <h3>HORARIO DE RECEPCIÓN</h3>
@@ -94,6 +104,9 @@ const Footer = props => {
                             más reciente sobre los cursos, talleres, promociones, etc.</p>
                             <form id="form" onSubmit={handleSubmit}>
                                 <MensajeFooter id="mensaje" value="Hola quiero saber más..."/>
+                                <Checkbox type="checkbox" name="acceptarTerminos" id="aceptarTerminos" className="" />
+                                <label for="aceptarTerminos" className="form-check-label">Acepto los términos y condiciones</label>
+                                <div className="error"></div>
                                 <Boton>Enviar</Boton>
                             </form>
                         <FaWhatsapp/>
@@ -103,5 +116,7 @@ const Footer = props => {
         </SFooter>
     )
 }
+
+
 
 export default Footer
