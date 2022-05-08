@@ -9,36 +9,24 @@ import HalfLayout from "../../../../components/layouts/HalfLayout"
 import CiruclarImage from "../../../../components/animations/CiruclarImage"
 import Lista from "../../../../components/listas/Lista"
 import ListaItem from "../../../../components/listas/ListaItem"
-import ScreenHeightLayout from "../../../../components/layouts/ScreenHeightLayout"
 import Subtitulo from "../../../../components/titulos/Subtitulo"
 import Marg from "../../../../components/layouts/Marg"
 import Boton from "../../../../components/clickables/botones/Boton"
-import Enlace from "../../../../components/clickables/enlaces/Enlace"
 import VLayout from "../../../../components/layouts/VLayout"
 
-const STitulo = styled.h1`
+export const STitulo = styled.h1`
     margin: 0;
     text-transform: uppercase;
     color: var(--color7);
 `
 
-const STitulo2 = styled.h2`
+export const STitulo2 = styled.h2`
     font-size: 30px;
     margin: 0;
     color: var(--color6);
 `
 
-const Seccion = styled.section`
-    margin-left: 50px;
-    color: var(--color7);
-    font-size: 20px;
-    p{
-        padding: 10px 0;
-        font-weight: 600;
-    }
-`
-
-const SHeadImage = styled.div`
+export const SHeadImage = styled.div`
     width: 100%;
     height: 300px;
     border-radius: 15px;
@@ -52,7 +40,7 @@ const SHeadImage = styled.div`
     box-shadow: var(--shadow);
 `
 
-const SCaja = styled.div`
+export const SCaja = styled.div`
     background-color: var(--color1);
     padding: 10px;
     border-radius: 15px;
@@ -79,9 +67,10 @@ const SCaja = styled.div`
     }
 `
 
-const STarjetaHorario = styled.div`
+export const STarjetaHorario = styled.div`
     background-color: var(--color1);
     box-shadow: var(--shadow);
+    width: 300px;
 
     border-radius: 10px;
 
@@ -107,12 +96,13 @@ const STarjetaHorario = styled.div`
             padding: 0;
             color: var(--color7);
             text-transform: uppercase;
+            font-size: 25px;
         }
     }
 
 `
 
-const SReservaCarta = styled.div`
+export const SReservaCarta = styled.div`
     width: 300px;
     margin-top: 36px;
 
@@ -137,7 +127,9 @@ const Quiromasaje = props => {
                     <FlexLayout column>
                         <Titulo2>formación</Titulo2>
                         <Titulo2 invert>cursos</Titulo2>
+                        <Marg px="10"/>
                         <STitulo>quiromasaje profesional</STitulo>
+                        <Marg px="10"/>
                     </FlexLayout>
                     <SHeadImage src={Mas3} alt="" >
                         <FlexLayout gap={10} vAlign='bottom' hAlign='center' fullHeight>
@@ -211,7 +203,7 @@ const Quiromasaje = props => {
 
                 <FlexLayout screenHeight vAlign='center' column>
                     <FlexLayout column>
-                        <Titulo center fullWidth>¡nos adaptarmos a tus horarios!</Titulo>
+                        <Titulo center fullWidth>¡nos adaptamos a tus horarios!</Titulo>
                         <Marg px={5} />
                         <Subtitulo center fullWidth upper>turnos de mañana, tarde y fin de semana</Subtitulo>
                         <Marg px={10} />
