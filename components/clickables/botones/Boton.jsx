@@ -11,6 +11,10 @@ const Boton = styled.button`
     font-size: 20px;
     cursor: pointer;
 
+    ${props => props.flat ? `border-radius: 0; box-shadow: none`:``};
+    ${ props => props.borderBottom ? `border-bottom-left-radius: 10px; border-bottom-right-radius: 10px` : ``};
+    ${ props => props.fullWidth ? `width: 100%` : ``};
+
     transition: transform .1s, background .4s;
 
     &:hover{

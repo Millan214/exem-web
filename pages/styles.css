@@ -51,3 +51,9 @@ svg {
     background-color: var(--font-color-dark);
     color: var(--font-color-light);
 }
+
+a{
+    color: var(--color7);
+    text-decoration: none;
+    transition: letter-spacing .25s;
+}
