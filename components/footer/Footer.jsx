@@ -5,6 +5,7 @@ import Boton from "../clickables/botones/Boton"
 import Map from "./Map";
 import Marg from "../layouts/Marg";
 import { Link } from "react-router-dom";
+import { SideMarginsLayout } from "../layouts/SideMarginsLayout";
 
 const SFooter = styled.footer`
     display: flex;
@@ -24,7 +25,6 @@ const SFooterBody = styled.div`
 `
 
 const SFooterWrapper = styled.div`
-    padding: 1.25rem 1.875rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -32,12 +32,11 @@ const SFooterWrapper = styled.div`
     @media only screen and (min-width: 29.8125rem /*477px*/) {
         justify-content: space-between;
     }
-
 `
 
 const Item = styled.div`
-    padding: .5rem;
-   /* Arriba | Derecha | Abajo | Izquierda */
+    padding: 0.7rem;
+    /*Arriba | Derecha | Abajo | Izquierda*/
     margin: 0px 3em 1em 3em;
     text-align: left;
     /*display: inline-block;*/
@@ -108,8 +107,9 @@ const Footer = props => {
             <svg  viewBox="0 0 1920 234" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1920 189.182V234H0L0.000134665 173.485C335 83.5121 403.006 218.62 767.5 173.485C1022.5 141.907 1425 92.0933 1920 189.182Z" fill="var(--color2)"/>
             </svg>
-            
+             
         <SFooterBody>
+        <SideMarginsLayout> 
                 <SFooterWrapper>
                     <Item>
                         <h3>DIRECCIÓN</h3>
@@ -148,7 +148,9 @@ const Footer = props => {
                             </form>
                     </Item>
                 </SFooterWrapper>
+                </SideMarginsLayout>  
         </SFooterBody>
+    
     </SFooter>
     )
 }
