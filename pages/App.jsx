@@ -22,7 +22,7 @@ const App = () => {
     <ScrollOffsetContext.Provider value={ { offset } }>
       <NavBar />
       <Outlet />
-      <Footer/>
+      <Footer />
     </ScrollOffsetContext.Provider>
   );
 }

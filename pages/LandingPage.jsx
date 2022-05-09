@@ -7,7 +7,7 @@ import { SideMarginsLayout } from "../components/layouts/SideMarginsLayout";
 import coverVideo from "../components/media/coverVideo.mp4";
 import Tarjeta from "../components/tarjeta/Tarjeta";
 import Person from '../components/media/person.jpg';
-import Mas1 from '../components/media/mas1.jpg';
+import Espalda from '../components/media/espalda.jpg';
 import Titulo from "../components/titulos/Titulo";
 import TarjetaGrande from "../components/tarjeta/TarjetaGrande";
 import CiruclarImage from "../components/animations/CiruclarImage";
@@ -15,6 +15,10 @@ import HalfLayout from "../components/layouts/HalfLayout";
 import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
 import { useEffect } from "react";
+import Vendaje1 from "../components/media/vendaje1.jpg";
+
+import Formulario from "../components/formularios/Formulario";
+import Marg from "../components/layouts/Marg";
 
 const SVideo = styled.video`
   position: absolute;
@@ -35,19 +39,7 @@ const SVideoContent = styled.div`
   z-index: 2;
 `
 
-const CardContainer = styled.div`
-  box-shadow: 0 15px 30px 1px var(--color3);
-	background: rgba(255, 255, 255, 0.90);
-	text-align: center;
-	border-radius: 5px;
-	overflow: hidden;
-	margin: 5em auto;
-	height: 350px;
-	width: 700px;
-`
-
 const TopCursos = styled.div`
-	position: relative;
 	text-align: left;
 	overflow: hidden;
 	padding: 30px;
@@ -55,16 +47,31 @@ const TopCursos = styled.div`
 	float: left;
 	width: 40%;
 `
-
-const ImgCursos = styled.div`
-	transition: all 0.3s ease-out;
-	display: inline-block;
-	position: relative;
+const CardContainer = styled.div`
+  box-shadow: 0 15px 30px 1px var(--color3);
 	overflow: hidden;
+	height: 80vh;
+	width: 100%;
+  display: flex;
+  position: relative;
+  
+`
+
+const ImageFull = styled.img`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+`
+
+const ContenedorBanner = styled.div`
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
 	height: 100%;
-	float: right;
-	width: 50%;
-	display: inline-block;
+	float: left;
+	width: 100%;
 `
 
 const LandingPage = () => {
@@ -99,7 +106,7 @@ const LandingPage = () => {
               />
               <FlowerBox
                 content={<>
-                  34
+                  12
                 </>}
                 text={<>
                   masajes distintos
@@ -107,36 +114,42 @@ const LandingPage = () => {
               />
               <FlowerBox
                 content={<>
-                  12
+                  18
                 </>}
                 text={<>
-                  cursos
+                cursos
                 </>}
               />
               <FlowerBox
                 content={<>
-                  20
+                  99%
                 </>}
                 text={<>
-                  años de experiencia
+                  de satisfacción
                 </>}
               />
             </FlexLayout>
           </FlexLayout>
         </ScreenHeightLayout>
       </SideMarginsLayout>
-      
-      <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
+
+  <ScreenHeightLayout>
+    <FlexLayout>
       <CardContainer>
-        <TopCursos>
-          <h1>Cursos más venidos</h1>
-        </TopCursos>
-        <ImgCursos>
-          <img src="https://cdn.pixabay.com/photo/2018/11/05/09/53/massage-3795691_960_720.jpg" alt="top-cursos" />
-        </ImgCursos>
+        <ImageFull src={Vendaje1} alt="banner" />
+            <ContenedorBanner>
+              <Titulo>PRÓXIMA CONVOCATORIA</Titulo>
+              <Titulo>CURSO QUIROMASAJE PROFESIONAL</Titulo>
+              <p>INICIO: 11 DE MAYO</p>
+            </ContenedorBanner>
+            <ContenedorBanner>
+              <Formulario/>
+            </ContenedorBanner>
       </CardContainer>
-      </FlexLayout>
-      
+    </FlexLayout>
+    </ScreenHeightLayout>
+
+
       <SideMarginsLayout>
         <FlexLayout hAlign='center' vAlign='center' screenHeight>
           <FlexLayout hAlign='center' vAlign='center' column>
@@ -167,44 +180,16 @@ const LandingPage = () => {
       <SideMarginsLayout>
         <ScreenHeightLayout>
           <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
-            <TarjetaGrande enter={'pide cita ahora'} img={Mas1}>
+            <TarjetaGrande enter={'pide cita ahora'} img={Espalda}>
               disfruta de nuestros masajes profesionales
             </TarjetaGrande>
           </FlexLayout>
         </ScreenHeightLayout>
       </SideMarginsLayout>
 
-      <SideMarginsLayout>
-        <FlexLayout hAlign='center' vAlign='center' screenHeight>
-          <FlexLayout hAlign='center' vAlign='center' column>
-            <Titulo>top cursos</Titulo>
-            <HalfLayout>
+    <Marg props={"100vh"}/>
 
-              <FlexLayout vAlign='center' hAlign='center' fullHeight>
-                <CiruclarImage
-                  scale={4}
-                  img={Person}
-                  alt="person"
-                >
-                </CiruclarImage>
-              </FlexLayout>
-
-              <FlexLayout vAlign='center' hAlign='right' fullHeight>
-                <Lista>
-                  <ListaItem>Quiromasaje profesional</ListaItem>
-                  <ListaItem>Deportivo profesional</ListaItem>
-                  <ListaItem>Reflexología podal</ListaItem>
-                  <ListaItem>Masaje tailandés tradicional</ListaItem>
-                  <ListaItem>Anticelulítico</ListaItem>
-                </Lista>
-              </FlexLayout>
-
-            </HalfLayout>
-          </FlexLayout>
-        </FlexLayout>
-      </SideMarginsLayout>
-
-      <ScreenHeightLayout>
+    <ScreenHeightLayout>
         <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
           <Titulo>reseñas de nuestros clientes</Titulo>
           <FlexLayout hAlign={'center'} wrap>
@@ -247,7 +232,7 @@ const LandingPage = () => {
           </FlexLayout>
         </FlexLayout>
       </ScreenHeightLayout>
-
+         
     </div>
   );
 };

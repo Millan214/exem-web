@@ -61,13 +61,14 @@ const horizontalAlign = halign => {
  */
 export const FlexLayout = styled.div`
     display: flex;
+    gap: ${props => props.gap ? props.gap+'px' : '0'};
     flex-direction: ${ props => props.column ? 'column' : 'row' };
     flex-wrap: ${ props => props.wrap ? 'wrap' : 'nowrap' };
     align-items: ${ props => verticalAlign( props.vAlign ) };
     justify-content: ${ props => horizontalAlign( props.hAlign ) };
-    ${ props => props.fullwidth ? 'width: 100%' : 'width: auto' };
     ${ props => props.screenHeight ? 'height: 100vh !important' : 'height: auto' };
     ${ props => props.screenWidth ? 'width: 100vw' : 'width: auto' };
     ${ props => props.fullHeight ? 'height: 100%' : 'height: auto' };
+    ${ props => props.fullWidth ? 'width: 100%' : 'width: auto' };
     flex-direction: ${ props => props.column ? 'column' : 'row' };
 `

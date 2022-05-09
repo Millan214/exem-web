@@ -4,6 +4,7 @@ import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
 import Titulo2 from "../../../components/titulos/Titulo2"
 import Person from '../../../components/media/person.jpg';
 import VLayout from "../../../components/layouts/VLayout";
+import { Link } from "react-router-dom"
 import { useEffect } from "react";
 
 /**
@@ -13,31 +14,33 @@ import { useEffect } from "react";
 const Cursos = props => {
 
     useEffect(() => {
-        window.scrollTo(0,0)
+        window.scrollTo(0, 0)
     })
 
     return (
         <TopMarginLayout>
             <FlexLayout vAlign='center' hAlign='center' column>
-                <Titulo2 pad = { 90 } >
+                <Titulo2 pad={90} >
                     formación
                 </Titulo2>
-                <Titulo2 pad = { 90 } invert >
+                <Titulo2 pad={90} invert >
                     cursos
                 </Titulo2>
             </FlexLayout>
             <VLayout margTop={100} up>
 
                 <div>
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
-                    </CiruclarImage>
+                    <Link to="/">
+                        <CiruclarImage
+                            img={Person}
+                            alt="person"
+                            scale={5}
+                            hasText
+                            hover
+                        >
+                            <h1>Deportivo profesional</h1>
+                        </CiruclarImage>
+                    </Link>
 
                     <CiruclarImage
                         img={Person}
@@ -51,15 +54,18 @@ const Cursos = props => {
                 </div>
 
                 <div>
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
-                    </CiruclarImage>
+                    <Link to="/formacion/cursos/quiromasaje">
+                        <CiruclarImage
+                            img={Person}
+                            alt="person"
+                            scale={5}
+                            hasText
+                            hover
+                        >
+                            <h1>Quiromasaje Profesional</h1>
+                        </CiruclarImage>
+                    </Link>
+
 
                     <CiruclarImage
                         img={Person}

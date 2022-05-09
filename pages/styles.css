@@ -2,8 +2,6 @@
 
 :root {
     --color: #e3c1c1;
-    --secundario1: #E88780;
-
     --color1: #f9f3f1;
     --color2: #f4cdbd;
     --color3: #e9b9a5;
@@ -11,6 +9,10 @@
     --color5: #9d5d43;
     --color6: #894b31;
     --color7: #633018;
+
+    --secundario: #B852B7;
+    --secundario-light: #da76d8;
+    --secundario1: #E88780;
 
     --bg: #FBFBFB;
 
@@ -30,6 +32,7 @@
 body {
     margin: 0;
     background: var(--bg);
+    font-family: 'Montserrat', sans-serif;
 }
 
 svg {
@@ -41,9 +44,16 @@ svg {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ::selection {
     background-color: var(--font-color-dark);
     color: var(--font-color-light);
+}
+
+a{
+    color: var(--color7);
+    text-decoration: none;
+    transition: letter-spacing .25s;
 }

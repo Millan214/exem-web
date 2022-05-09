@@ -162,7 +162,15 @@ const NavBar = () => {
                 >
                     formación
                 </NavBarLink>
-                <NavBarLink to="/">servicios</NavBarLink>
+                <NavBarLink to="/"
+                    desplegable = {<>
+                        <Link to="/servicios/masajes-profesionales">masajes profesionales</Link>
+                        <Link to="/servicios/masajes-alumnos">masajes alumnos</Link>
+                        <Link to="/servicios/actividades">actividades</Link>
+                    </>}
+                >
+                    servicios
+                </NavBarLink>
                 <NavBarLink to="/">contacto</NavBarLink>
                 <NavBarLink to="/">¿quienes somos?</NavBarLink>
             </SNavBarCenter>
