@@ -127,9 +127,9 @@ const Quiromasaje = props => {
                     <FlexLayout column>
                         <Titulo2>formación</Titulo2>
                         <Titulo2 invert>cursos</Titulo2>
-                        <Marg px="10"/>
+                        <Marg px="10" />
                         <STitulo>quiromasaje profesional</STitulo>
-                        <Marg px="10"/>
+                        <Marg px="10" />
                     </FlexLayout>
                     <SHeadImage src={Mas3} alt="" >
                         <FlexLayout gap={10} vAlign='bottom' hAlign='center' fullHeight>
@@ -366,7 +366,7 @@ const Quiromasaje = props => {
                 </div>
 
 
-                </VLayout>
+            </VLayout>
         </TopMarginLayout>
     )
 }
