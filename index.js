@@ -6,6 +6,7 @@ import Cursos from './pages/formacion/cursos/Cursos';
 import Quiromasaje from './pages/formacion/cursos/quiromasaje/Quiromasaje';
 import Talleres from './pages/formacion/talleres/Talleres';
 import LandingPage from './pages/LandingPage';
+import QuienesSomos from './pages/quienes-somos/QuienesSomos';
 import Actividades from './pages/servicios/actividades/Actividades';
 import MasajesAlumnos from './pages/servicios/masajes-alumnos/MasajesAlumnos';
 import MasajesProfesionales from './pages/servicios/masajes-profesionales/MasajesProfesionales';
@@ -19,11 +20,16 @@ root.render(
 
           <Route index element={ <LandingPage /> } />
 
+          <Route path='quienes-somos' element={ <QuienesSomos /> } />
+
           <Route path="formacion">
 
             <Route path="cursos" >
+
               <Route index element={ <Cursos /> } />
+
               <Route path="quiromasaje" element={ <Quiromasaje /> }/>
+
             </Route>
 
             <Route path="talleres" element={ <Talleres /> }/>

@@ -171,9 +171,13 @@ const NavBar = () => {
                 >
                     servicios
                 </NavBarLink>
+
                 <NavBarLink to="/">contacto</NavBarLink>
-                <NavBarLink to="/">¿quienes somos?</NavBarLink>
+
+                <NavBarLink to="/quienes-somos">¿quienes somos?</NavBarLink>
+
             </SNavBarCenter>
+
             <SNavBarRight>
                 <NavBarLink to="/">enlace</NavBarLink>
                 <SOpenIcon onClick={ () => closeSidebar() }>

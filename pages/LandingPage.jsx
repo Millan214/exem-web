@@ -19,6 +19,7 @@ import Vendaje1 from "../components/media/vendaje1.jpg";
 
 import Formulario from "../components/formularios/Formulario";
 import Marg from "../components/layouts/Marg";
+import Titulo3 from "../components/titulos/Titulo3";
 
 const SVideo = styled.video`
   position: absolute;
@@ -54,7 +55,6 @@ const CardContainer = styled.div`
 	width: 100%;
   display: flex;
   position: relative;
-  
 `
 
 const ImageFull = styled.img`
@@ -72,6 +72,13 @@ const ContenedorBanner = styled.div`
 	height: 100%;
 	float: left;
 	width: 100%;
+`
+
+const ParrafoBanner = styled.p`
+	font-size: 50px;
+  color: white;
+  font-weight: bold;
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5), -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black;
 `
 
 const LandingPage = () => {
@@ -138,9 +145,9 @@ const LandingPage = () => {
       <CardContainer>
         <ImageFull src={Vendaje1} alt="banner" />
             <ContenedorBanner>
-              <Titulo>PRÓXIMA CONVOCATORIA</Titulo>
-              <Titulo>CURSO QUIROMASAJE PROFESIONAL</Titulo>
-              <p>INICIO: 11 DE MAYO</p>
+              <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
+              <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
+              <ParrafoBanner>INICIO: 11 DE MAYO</ParrafoBanner>
             </ContenedorBanner>
             <ContenedorBanner>
               <Formulario/>
