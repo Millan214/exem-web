@@ -6,6 +6,7 @@ import Person from '../../../components/media/person.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { Link } from "react-router-dom"
 import { useEffect } from "react";
+import Onda from "../../../components/ondas/Onda";
 
 /**
  * @param   
@@ -19,14 +20,18 @@ const Cursos = props => {
 
     return (
         <TopMarginLayout>
-            <FlexLayout vAlign='center' hAlign='center' column>
-                <Titulo2 pad={90} >
-                    formación
-                </Titulo2>
-                <Titulo2 pad={90} invert >
-                    cursos
-                </Titulo2>
-            </FlexLayout>
+
+            <Onda>
+                <FlexLayout vAlign='center' hAlign='center' column>
+                    <Titulo2 pad={90} >
+                        formación
+                    </Titulo2>
+                    <Titulo2 pad={90} invert >
+                        cursos
+                    </Titulo2>
+                </FlexLayout>
+            </Onda>
+
             <VLayout margTop={100} up>
 
                 <div>
