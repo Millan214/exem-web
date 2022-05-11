@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import App from './pages/App';
 import Cursos from './pages/formacion/cursos/Cursos';
 import Quiromasaje from './pages/formacion/cursos/quiromasaje/Quiromasaje';
@@ -14,7 +14,7 @@ import MasajesProfesionales from './pages/servicios/masajes-profesionales/Masaje
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={ <App /> }>
 
@@ -48,6 +48,6 @@ root.render(
 
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
