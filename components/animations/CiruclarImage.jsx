@@ -84,7 +84,7 @@ const CiruclarImage = props => {
     return (
         <SWrapper {...props} size={size}>
             <SBody {...props} size={size}>
-                <img src={ props.img } alt={ props.alt } />
+                <img loading="lazy" src={ props.img } alt={ props.alt } />
                 <SCustomPetal/>
             </SBody>
             <STitle {...props} size={size}>

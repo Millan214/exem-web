@@ -168,7 +168,7 @@ const Quiromasaje = props => {
                     <FlexLayout hAlign='center' vAlign='center' >
                         <FlexLayout hAlign='center' vAlign='center' column>
                             <Titulo>lo que vas a aprender</Titulo>
-                            <HalfLayout>
+                            <HalfLayout wrap>
 
                                 <FlexLayout vAlign='center' hAlign='right' fullHeight>
                                     <Lista>

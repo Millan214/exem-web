@@ -21,7 +21,7 @@ const SNavBar = styled.nav.attrs(props => props.location === "/" ? ({
     align-items: center;
     justify-content: space-between;
 
-    height: 50px;
+    min-height: 50px;
     padding: 10px;
 
     position: fixed;
@@ -50,7 +50,7 @@ const SNavBarCenter = styled.div`
 
     @media (max-width: 1000px) {
         position: fixed;
-
+        width: 400px;
         flex-direction: column;
 
         height: 100vh;

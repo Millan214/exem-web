@@ -5,6 +5,7 @@ import Titulo2 from "../../../components/titulos/Titulo2"
 import Person from '../../../components/media/person.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { useEffect } from "react";
+import Onda from "../../../components/ondas/Onda";
 
 /**
  * @param   
@@ -18,10 +19,16 @@ const Talleres = props => {
 
     return (
         <TopMarginLayout>
-            <FlexLayout vAlign='center' hAlign='center' column>
-                <Titulo2>formación</Titulo2>
-                <Titulo2 invert>talleres</Titulo2>
-            </FlexLayout>
+            <Onda>
+                <FlexLayout vAlign='center' hAlign='center' column>
+                    <Titulo2 pad={90} >
+                        formación
+                    </Titulo2>
+                    <Titulo2 pad={90} invert >
+                        talleres
+                    </Titulo2>
+                </FlexLayout>
+            </Onda>
             <VLayout margTop={100} up>
 
                 <div>

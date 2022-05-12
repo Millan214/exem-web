@@ -11,6 +11,7 @@ import { SideMarginsLayout } from "../../../components/layouts/SideMarginsLayout
 import Marg from "../../../components/layouts/Marg";
 import Boton from "../../../components/clickables/botones/Boton";
 import { STarjetaHorario, STitulo } from "../../formacion/cursos/quiromasaje/Quiromasaje";
+import Onda from "../../../components/ondas/Onda";
 
 
 /**
@@ -26,14 +27,16 @@ const MasajesProfesionales = props => {
     return (
         <TopMarginLayout>
 
-            <FlexLayout vAlign='center' hAlign='center' column>
-                <Titulo2 pad={90} >
-                    servicios
-                </Titulo2>
-                <Titulo2 pad={90} invert >
-                    masajes profesionales
-                </Titulo2>
-            </FlexLayout>
+            <Onda>
+                <FlexLayout vAlign='center' hAlign='center' column>
+                    <Titulo2 pad={90} >
+                        formación
+                    </Titulo2>
+                    <Titulo2 pad={90} invert >
+                        masajes profesionales
+                    </Titulo2>
+                </FlexLayout>
+            </Onda>
 
             <VLayout margTop={100} up>
 
