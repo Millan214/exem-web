@@ -1,4 +1,7 @@
+import { FlexLayout } from "../../../components/layouts/FlexLayout"
 import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
+import Onda from "../../../components/ondas/Onda"
+import Titulo2 from "../../../components/titulos/Titulo2"
 
 /**
  * @param   
@@ -7,7 +10,16 @@ import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
 const MasajesAlumnos = props => {
     return(
         <TopMarginLayout>
-            MasajesAlumnos
+            <Onda>
+                <FlexLayout vAlign='center' hAlign='center' column>
+                    <Titulo2 pad={90} >
+                        formación
+                    </Titulo2>
+                    <Titulo2 pad={90} invert >
+                        masajes alumnos
+                    </Titulo2>
+                </FlexLayout>
+            </Onda>
         </TopMarginLayout>
     )
 }

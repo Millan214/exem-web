@@ -11,7 +11,6 @@ const SWrapper = styled.li`
         color: var(--color5);
         margin: 10px;
         grid-area: texto;
-        font-size: 1.2vw;
     }
     
     div{

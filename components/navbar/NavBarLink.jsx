@@ -17,16 +17,21 @@ const SNavBarLinkUnderline = styled.hr`
 const SDesplegable = styled.div`
     position: absolute;
     background: var(--color5);
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    border: 5px solid var(--color7);
+    border-top: none;
     display: flex;
     flex-direction: column;
     display: none;
 
     & *{
-        padding: 10px;
+        padding: 10px 20px;
         color: var(--font-color-light);
         text-decoration: none;
         text-transform: uppercase;
         font-weight: bold;
+        border-radius: 10px;
 
         &:hover, &:focus {
             background: var(--color4);
