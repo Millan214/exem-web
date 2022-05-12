@@ -1,7 +1,10 @@
 import styled from "styled-components"
 
 const SHalf = styled.div`
-    width: 50%;
+    @media (max-width: 1000px) {
+        width: ${ props => props.wrap ? '100%' : '50%' };
+    }
+    
 `
 
 const SWrapper = styled.div`
@@ -10,6 +13,9 @@ const SWrapper = styled.div`
     width: 100%;
     height: 100%;
 
+    @media (max-width: 1000px) {
+        flex-wrap: ${props => props.wrap ? "wrap" : "nowrap"};
+    }
 `
 
 /**
@@ -18,13 +24,14 @@ const SWrapper = styled.div`
  */
 const HalfLayout = props => {
     return(
-        <SWrapper>
-            <SHalf>
-                { props.children[0] }
-            </SHalf>
-            <SHalf>
+        <SWrapper { ...props }>
+            <SHalf { ...props }>
                 { props.children[1] }
             </SHalf>
+            <SHalf { ...props }>
+                { props.children[0] }
+            </SHalf>
+            
         </SWrapper>
     )
 }

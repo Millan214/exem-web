@@ -16,7 +16,6 @@ import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
 import { useEffect } from "react";
 import Vendaje1 from "../components/media/vendaje1.jpg";
-
 import Formulario from "../components/formularios/Formulario";
 import Marg from "../components/layouts/Marg";
 import Titulo3 from "../components/titulos/Titulo3";

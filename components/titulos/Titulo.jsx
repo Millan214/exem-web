@@ -4,6 +4,7 @@ const Titulo = styled.h1`
     color: var(--color6);
     text-transform: uppercase;
     font-size: 50px;
+    text-align: center;
     ${ props => props.center ? "text-align: center;" : "" };
     ${ props => props.fullWidth ? "width: 100%;" : "" };
 `
