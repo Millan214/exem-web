@@ -1,18 +1,20 @@
 import styled from "styled-components"
-import { FaInstagram, FaFacebookSquare, FaWhatsapp } from 'react-icons/fa';
 import React from "react";
 import Boton from "../clickables/botones/Boton"
 import Map from "./Map";
 import Marg from "../layouts/Marg";
 import { Link } from "react-router-dom";
 import { SideMarginsLayout } from "../layouts/SideMarginsLayout";
+import Instagram from "../../components/media/mediaIcons/instagram.png";
+import Facebook from "../../components/media/mediaIcons/facebook.png";
+import Whatsapp from "../../components/media/mediaIcons/whatsapp.png";
 
 const SFooter = styled.footer`
     display: flex;
     flex-direction: column;
     align-self: center;
     margin-top: 100px;
-    font-size: 1.2em;
+    font-size: 1.3em;
 
     @media only screen and (max-width: 77.5rem /*1240px*/ ) {
         font-size: 0.9em; 
@@ -46,6 +48,8 @@ const Item = styled.div`
 
 export const MensajeFooter = styled.input`
   width: 20em;
+  height: 2.4em;
+  font-size: 0.8em;
 `;
 
 export const Checkbox = styled.input`
@@ -59,12 +63,11 @@ export const Error = styled.p`
 const FooterLink = styled.div`
     text-decoration: none;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.2em;
     color: black;
     text-transform: uppercase;
     display: flex;
     cursor: pointer;
-
 `
 
 const SFooterLinkUnderline = styled.hr`
@@ -82,8 +85,10 @@ const SFooterLinkUnderline = styled.hr`
 const CheckboxText = styled.p`
     display: inline;
 `
-
-const styleIcons = { fontSize: "1.5em" }
+const RedesSociales = styled.img`
+    width: 1.5em;
+    height: 1.5em;
+`
 
 /*Enviar mensaje a WhatsApp de la empresa si se aceptan los terminos (de momento es mi tlf)*/
 function handleSubmit(e) {
@@ -130,21 +135,24 @@ const Footer = props => {
                         <p>FESTIVOS: Consultar</p>
                     </Item>
                     <Item>
-                        <p>¡Síguenos! 
-                            <FaInstagram style={styleIcons}/>                   
-                            <FaFacebookSquare style={styleIcons}/>
+                        <p>
+                            ¡Síguenos! 
                         </p>
+                        <RedesSociales src={Instagram}/>        
+                        <RedesSociales src={Facebook}/>
                     </Item>
                     <Item>
-                        <p>Suscríbete a nuestro Newsletter para poder recibir la información
-                            más reciente sobre los cursos, talleres, promociones, etc.</p>
+                        <p><strong>Suscríbete a nuestro Newsletter para poder recibir la información
+                            más reciente sobre los cursos, talleres, promociones, etc.</strong></p>
                             <form id="form" onSubmit={handleSubmit}>
-                                <MensajeFooter id="mensaje" value="Hola quiero saber más..."/><FaWhatsapp style={styleIcons}/>
-                                <Marg props={"100vh"}/>
+                                <MensajeFooter id="mensaje" placeholder="Quiero saber más sobre..."/>
+                                <RedesSociales src={Whatsapp}/>
+                                    <Marg props={"100vh"}/>
                                 <Checkbox type="checkbox" name="aceptarTerminos" id="aceptarTerminos"/>
                                 <CheckboxText> Acepto los términos y condiciones</CheckboxText>
                                     <Error id="error" style={{color:"red"}}></Error>
                                 <Boton>Enviar</Boton>
+                                <Marg props={"100vh"}/>
                             </form>
                     </Item>
                 </SFooterWrapper>

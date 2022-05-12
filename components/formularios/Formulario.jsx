@@ -20,6 +20,7 @@ const BotonForm = styled.button`
     border-radius: 10px;
     box-shadow: var(--shadow);
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
 
     ${ props => props.flat ? `border-radius: 0; box-shadow: none`:``};
@@ -38,8 +39,21 @@ const BotonForm = styled.button`
 `
 
 const ContainerForm = styled.div`
-  padding: 20%;
+  display: grid;
+  grid-template-columns: 400px;
+  line-height : 4em;
+  justify-content: center;
+`;
 
+const InputForm = styled.input`
+  font-size: 20px;
+  width: 20em;
+  height: 2.5em;
+  border: none;
+`;
+
+const SelectForm = styled.select`
+  font-size:20px;
 `;
 
 const Formulario = () => {
@@ -52,6 +66,7 @@ const Formulario = () => {
   const onSubmit = (data) =>{
     console.log(data)
     const frmContact = { nombre: data.nombre, email: data.email, telefono: data.telefono, curso: data.curso };
+    
     console.log(frmContact)
       emailjs.send('service_9omzxg5','template_wcyhh5a', frmContact,'sWIdjc2pYZ9Zrgb9X').then(res=>{
         console.log(res);
@@ -61,41 +76,49 @@ const Formulario = () => {
   }
 
   return (
-    <div>
+
+  <div>
+    <ContainerForm>
     <form id="form" onSubmit={handleSubmit(onSubmit)} >
-        <input type="text" name="nombre" id='nombre' {...register('nombre', 
+        <InputForm type="text" name="nombre" id='nombre' placeholder="Nombre*" {...register('nombre', 
           {required: true
           })}/>
           {errors.nombre?.type === 'required' && <p>El campo nombre es requerido</p>}
 
-        <input type="text" name="apellidos" id='apellidos' {...register('apellidos', 
+        <InputForm type="text" name="apellidos" id='apellidos' placeholder="Apellidos*" {...register('apellidos', 
           {required: true
           })}/>
           {errors.apellidos?.type === 'required' && <p>El campo apellidos es requerido</p>}
 
-        <input type="text" name="email" id='email' {...register('email',
+        <InputForm type="text" name="email" id='email' placeholder="Correo electrónico*" {...register('email',
           {required: true, pattern: /\S+@\S+\.\S+/
           })}/>
           {errors.email?.type === 'required' && <p>El campo email es requerido</p>}
           {errors.email?.type === 'pattern' && <p>El email es incorrecto</p>}
-        <input type="text" name="telefono" id='telefono'{...register('telefono', 
+
+        <InputForm type="text" name="telefono" id='telefono' placeholder="Teléfono*" {...register('telefono', 
           {required: true
           })}/>
           {errors.telefono?.type === 'required' && <p>El campo telefono es requerido</p>}
 
         <div>
-        <label>Selecciona el curso que te interese</label>
-        <select {...register('curso')}>
+        <label style={{fontSize: '20px'}}>Selecciona el curso que te interese</label>
+        <SelectForm {...register('curso')}>
           <option value="Quiromasaje" name="quiro" id='quiro'>Quiromasaje</option>
           <option value="Reflexología" name="quiro" id='quiro'>Reflexología</option>
           <option value="Deportivo" name="quiro" id='quiro'>Deportivo</option>
+          <option value="Tailandes" name="quiro" id='quiro'>Tailandés</option>
           <option value="Talleres" name="quiro" id='quiro'>Talleres</option>
-        </select>
+        </SelectForm>
         </div>
+
 
         <BotonForm>SOLICITAR INFORMACIÓN</BotonForm>
     </form>
+    </ContainerForm>
   </div>
+
+ 
   )
 }
 
