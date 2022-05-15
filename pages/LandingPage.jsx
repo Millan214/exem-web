@@ -14,7 +14,6 @@ import CiruclarImage from "../components/animations/CiruclarImage";
 import HalfLayout from "../components/layouts/HalfLayout";
 import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
-import { useEffect } from "react";
 import Vendaje1 from "../components/media/vendaje1.jpg";
 
 import Formulario from "../components/formularios/Formulario";
@@ -83,10 +82,6 @@ const ParrafoBanner = styled.p`
 
 const LandingPage = () => {
 
-  useEffect(() => {
-    window.scrollTo(0,0)
-  })
-
   return (
     <div>
       <SVideo src={coverVideo} autoPlay loop muted />
@@ -124,7 +119,7 @@ const LandingPage = () => {
                   18
                 </>}
                 text={<>
-                cursos
+                  cursos
                 </>}
               />
               <FlowerBox
@@ -140,21 +135,21 @@ const LandingPage = () => {
         </ScreenHeightLayout>
       </SideMarginsLayout>
 
-  <ScreenHeightLayout>
-    <FlexLayout>
-      <CardContainer>
-        <ImageFull src={Vendaje1} alt="banner" />
+      <ScreenHeightLayout>
+        <FlexLayout>
+          <CardContainer>
+            <ImageFull src={Vendaje1} alt="banner" />
             <ContenedorBanner>
               <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
               <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
               <ParrafoBanner>INICIO: 11 DE MAYO</ParrafoBanner>
             </ContenedorBanner>
             <ContenedorBanner>
-              <Formulario/>
+              <Formulario />
             </ContenedorBanner>
-      </CardContainer>
-    </FlexLayout>
-    </ScreenHeightLayout>
+          </CardContainer>
+        </FlexLayout>
+      </ScreenHeightLayout>
 
 
       <SideMarginsLayout>
@@ -194,9 +189,9 @@ const LandingPage = () => {
         </ScreenHeightLayout>
       </SideMarginsLayout>
 
-    <Marg props={"100vh"}/>
+      <Marg props={"100vh"} />
 
-    <ScreenHeightLayout>
+      <ScreenHeightLayout>
         <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
           <Titulo>reseñas de nuestros clientes</Titulo>
           <FlexLayout hAlign={'center'} wrap>
@@ -239,7 +234,7 @@ const LandingPage = () => {
           </FlexLayout>
         </FlexLayout>
       </ScreenHeightLayout>
-         
+
     </div>
   );
 };
