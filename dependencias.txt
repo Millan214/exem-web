@@ -1,1 +1,1 @@
-npm i react-router-dom@6 styled-components animejs @react-google-maps/api react-hook-form emailjs-com
+npm i react-router-dom@6 styled-components animejs @react-google-maps/api react-hook-form emailjs-com react-icons firebase
