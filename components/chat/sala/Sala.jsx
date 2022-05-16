@@ -163,10 +163,6 @@ const Sala = props => {
 
     const user = useContext(UserContext)
 
-    useEffect(() => {
-
-    })
-
     const handleSubmit = e => {
 
         const enviarMensaje = async (mensaje) => {
@@ -178,6 +174,8 @@ const Sala = props => {
 
             const docRef = doc(db, "usuarios", user.user.uid);
             const docSnap = await getDoc(docRef);
+
+            //TODO: Almacenar los mensajes en una colección en ved de un objeto como campo
 
             if (docSnap.exists()) {
                 if (docSnap.data().sala){
@@ -195,7 +193,10 @@ const Sala = props => {
                                 }
                             }
                         ]
+                    }).then(() => {
+                        bajarChat()
                     })
+
                 } else {
                     setDoc(doc(db, "usuarios", user.user.uid), {
                         sala: [
@@ -210,6 +211,8 @@ const Sala = props => {
                                 }
                             }
                         ]
+                    }).then(() => {
+                        bajarChat()
                     })
                 }
 
@@ -217,10 +220,6 @@ const Sala = props => {
                 // doc.data() will be undefined in this case
                 console.error("El documento no existe!");
             }
-            
-            setInterval(() => {
-                bajarChat()
-            }, 10);
         }
 
         e.preventDefault()
