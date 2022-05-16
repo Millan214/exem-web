@@ -1,8 +1,11 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import { UserContext } from "../../../pages/App"
 import Enviar from "../../icons/Enviar"
 import MensajeChat from "../mensaje/MensajeChat"
+import { updateProfile } from "firebase/auth";
+import { auth, db } from "../../../firebase/firebaseInit"
+import { doc, setDoc, onSnapshot, getDoc } from "firebase/firestore"
 
 const SWrapper = styled.form`
     position: fixed;
@@ -50,6 +53,7 @@ const SChat = styled.div`
     gap: 10px;
     flex-direction: column;
     overflow-y: auto;
+    padding-right: 10px;
     /* width */
     &::-webkit-scrollbar {
         width: 5px;
@@ -126,54 +130,158 @@ const SBtnEnviar = styled.button`
     }
 `
 
+const SIntroduceNombre = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 10px;
+    background-color: var(--color1);
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+
+    ${props => props.display ? 'display: none' : ''};
+
+    h1{
+        color: var(--color7);
+    }
+
+    input{
+        border: none;
+        outline: none;
+        padding: 10px;
+        font-weight: bold;
+        color: var(--color7);
+        text-align: center;
+        border-radius: 5px;
+    }
+`
+
 const Sala = props => {
 
-    const user = useContext(UserContext).user
+    const user = useContext(UserContext)
 
     useEffect(() => {
-        //console.log(user)
+
     })
 
     const handleSubmit = e => {
+
+        const enviarMensaje = async (mensaje) => {
+
+            const bajarChat = () => {
+                let domChat = document.querySelector('#salaChat')
+                domChat.scrollTop = domChat.scrollHeight
+            }
+
+            const docRef = doc(db, "usuarios", user.user.uid);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                if (docSnap.data().sala){
+                    setDoc(doc(db, "usuarios", user.user.uid), {
+                        sala: [
+                            ...docSnap.data().sala,
+                            {
+                                contenido: mensaje,
+                                enviado: {
+                                    completeDate: new Date(),
+                                    dia: new Date().getDate(),
+                                    mes: new Date().getMonth() + 1,
+                                    h: new Date().getHours(),
+                                    min: new Date().getMinutes(),
+                                }
+                            }
+                        ]
+                    })
+                } else {
+                    setDoc(doc(db, "usuarios", user.user.uid), {
+                        sala: [
+                            {
+                                contenido: mensaje,
+                                enviado: {
+                                    completeDate: new Date(),
+                                    dia: new Date().getDate(),
+                                    mes: new Date().getMonth() + 1,
+                                    h: new Date().getHours(),
+                                    min: new Date().getMinutes(),
+                                }
+                            }
+                        ]
+                    })
+                }
+
+            } else {
+                // doc.data() will be undefined in this case
+                console.error("El documento no existe!");
+            }
+            
+            setInterval(() => {
+                bajarChat()
+            }, 10);
+        }
+
         e.preventDefault()
         const form = e.target
-        console.log(form['mensaje'].value)
+
+        if (form['nombre'].value) {
+            updateProfile(auth.currentUser, {
+                displayName: form['nombre'].value
+            })
+        }
+
+        if (form['mensaje'].value) enviarMensaje(form['mensaje'].value)
+
         form['mensaje'].value = ""
+
     }
 
+    const [sala, setSala] = useState(null)
+
+    useEffect(() => {
+        if( user.user ) {
+            onSnapshot(doc(db, "usuarios", user.user.uid), (docRef) => {
+                
+                let msgs = []
+                if (docRef.data().sala){
+                    docRef.data().sala.forEach((mensaje) => {
+                        msgs = [
+                            ...msgs,
+                            <MensajeChat
+                                right
+                                time={`${mensaje.enviado.h}:${mensaje.enviado.min}`}
+                                >
+                                { mensaje.contenido }
+                            </MensajeChat>
+                        ]
+                    })
+                }
+                
+                setSala( msgs )
+
+            })
+        }
+    })
+
+    /**
+     * lo de user.user? -> la interogación es para que solo se ejecute cuando user.user exista,
+     * porque como updateProfile es una promesa, a veces tarda un poco
+     */
     return (
         <SWrapper onSubmit={handleSubmit}>
+            <SIntroduceNombre display={user.user?.displayName}>
+                <h1>¿Como te llamas?</h1>
+                <input type="text" name="nombre" className="focus" placeholder="introduce tu nombre" autoComplete="off" spellCheck="false" />
+            </SIntroduceNombre>
             <SCabecera>
                 <SNotClaimed>¡Escríbenos!</SNotClaimed>
             </SCabecera>
-            <SChat>
-                <MensajeChat
-                    time='3:43 pm'>
-                    Hola que tal, tenía una pequeña duda
-                </MensajeChat>
-                <MensajeChat
-                    right
-                    time='5:50 pm'>
-                    En que te puedo ayoudar?
-                </MensajeChat>
-                <MensajeChat
-                    time='3:43 pm'>
-                    Hola que tal, tenía una pequeña duda
-                </MensajeChat>
-                <MensajeChat
-                    right
-                    time='5:50 pm'>
-                    En que te puedo ayoudar?
-                </MensajeChat>
-                <MensajeChat
-                    time='3:43 pm'>
-                    Hola que tal, tenía una pequeña duda
-                </MensajeChat>
-                <MensajeChat
-                    right
-                    time='5:50 pm'>
-                    En que te puedo ayoudar?
-                </MensajeChat>
+            <SChat id="salaChat">
+                {
+                    sala
+                }
             </SChat>
             <SInputWrapper>
                 <input className="focus" type='text' name="mensaje" placeholder="mensaje" spellCheck={false} autoComplete='off' />
