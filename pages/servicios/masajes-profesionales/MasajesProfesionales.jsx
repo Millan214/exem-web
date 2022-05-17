@@ -12,7 +12,7 @@ import Marg from "../../../components/layouts/Marg";
 import Boton from "../../../components/clickables/botones/Boton";
 import { STarjetaHorario, STitulo } from "../../formacion/cursos/quiromasaje/Quiromasaje";
 import Onda from "../../../components/ondas/Onda";
-
+import Catalogo from "../../../components/media/catalogo/catalogo.pdf"
 
 /**
  * @param   
@@ -48,7 +48,7 @@ const MasajesProfesionales = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Quiromasaje</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
@@ -58,29 +58,7 @@ const MasajesProfesionales = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
-                    </CiruclarImage>
-                </div>
-
-                <div>
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
-                    </CiruclarImage>
-
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Deportivo</h1>
                     </CiruclarImage>
                 </div>
 
@@ -92,7 +70,7 @@ const MasajesProfesionales = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Relajante-antiestrés</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
@@ -102,7 +80,29 @@ const MasajesProfesionales = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Reflexología podal</h1>
+                    </CiruclarImage>
+                </div>
+
+                <div>
+                    <CiruclarImage
+                        img={Person}
+                        alt="person"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Anticelulítico</h1>
+                    </CiruclarImage>
+
+                    <CiruclarImage
+                        img={Person}
+                        alt="person"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Craneo-facial</h1>
                     </CiruclarImage>
                 </div>
 
@@ -116,7 +116,11 @@ const MasajesProfesionales = props => {
                     <Titulo>catálogo de masajes</Titulo>
                     <FlexLayout vAlign="center" hAlign="between" gap={20}>
                         <Subtitulo>¡descárgalo AHORA!</Subtitulo>
-                        <Boton>Descargar</Boton>
+
+                        <a href={Catalogo} download="catalogo">
+                            <Boton>Descargar</Boton>
+                        </a>
+
                     </FlexLayout>
                 </SideMarginsLayout>
             </FlexLayout>
