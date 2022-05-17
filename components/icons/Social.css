@@ -1,0 +1,35 @@
+
+a.social {
+    margin: 0 0.5rem;
+    transition: transform 250ms;
+    display: inline-flex;
+    font-size: 0.9em;
+  }
+  
+  a.social:hover {
+    transform: translateY(-4px);
+  }
+  
+  .whatsapp {
+    color: #00BB2D;
+    opacity: 50%;
+    position: absolute;
+    left: 14.5em;
+    top: 0.45em;
+  }
+  
+  a.facebook {
+    color: #4968ad;
+  }
+  
+  a.instagram {
+    color: white;
+    padding-left:0.1em;
+    padding-right:0.1em;
+    background: #d6249f;
+    border-radius: 20%;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  }
+
+
+
