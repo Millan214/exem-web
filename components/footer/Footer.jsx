@@ -5,9 +5,13 @@ import Map from "./Map";
 import Marg from "../layouts/Marg";
 import { Link } from "react-router-dom";
 import { SideMarginsLayout } from "../layouts/SideMarginsLayout";
-import Instagram from "../../components/media/mediaIcons/instagram.png";
-import Facebook from "../../components/media/mediaIcons/facebook.png";
-import Whatsapp from "../../components/media/mediaIcons/whatsapp.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faWhatsapp
+} from "@fortawesome/free-brands-svg-icons";
+import Social from "../icons/Social.css";
 
 const SFooter = styled.footer`
     display: flex;
@@ -36,6 +40,20 @@ const SFooterWrapper = styled.div`
     }
 `
 
+const SFooterUl = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+`
+
+const SFooterLi = styled.li`
+    margin: 0.125rem 0.625rem;
+    white-space: nowrap;
+    list-style-type: none;
+    font-size: 15px;
+    display: inline-flex;
+`
+
 const Item = styled.div`
     padding: 0.7rem;
     /*Arriba | Derecha | Abajo | Izquierda*/
@@ -60,35 +78,28 @@ export const Error = styled.p`
   
 `;
 
-const FooterLink = styled.div`
+const FooterLinkContainer = styled.div`
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
     color: black;
     text-transform: uppercase;
-    display: flex;
+    display: column;
     cursor: pointer;
-`
-
-const SFooterLinkUnderline = styled.hr`
-    margin: 0;
-    border: none;
-
-    height: 2px;
-    width: 0;
-
-    background-color: black;
-
-    transition: width .25s;
 `
 
 const CheckboxText = styled.p`
     display: inline;
 `
-const RedesSociales = styled.img`
-    width: 1.5em;
-    height: 1.5em;
+const Parrafo = styled.p`
 `
+
+const InputContainer = styled.div`
+    position: relative;
+    display: inline-block;
+    text-align: center;
+`
+
 
 /*Enviar mensaje a WhatsApp de la empresa si se aceptan los terminos (de momento es mi tlf)*/
 function handleSubmit(e) {
@@ -114,7 +125,7 @@ const Footer = props => {
             </svg>
              
         <SFooterBody>
-        <SideMarginsLayout> 
+            <SideMarginsLayout> 
                 <SFooterWrapper>
                     <Item>
                         <h3>DIRECCIÓN</h3>
@@ -122,11 +133,12 @@ const Footer = props => {
                         <Map/>
                     </Item>
                     <Item>
-                        <FooterLink as={Link} to="/contacto">CONTACTO</FooterLink>
-                        <SFooterLinkUnderline/>
-                        <FooterLink as={Link} to="tel:+34911386587">911 386 587</FooterLink>
-                        <Marg props={"100vh"}/>
-                        <FooterLink as={Link} to="tel:+34606989398">606 989 398</FooterLink>
+                        <FooterLinkContainer as={Link} to="/contacto">CONTACTO</FooterLinkContainer>
+                        <FooterLinkContainer>
+                            <a href="tel:+34911386587">911 386 587 </a>
+                                <Marg props={"100vh"}/>
+                            <a href="tel:+34606989398">606 989 398</a>
+                        </FooterLinkContainer>
                     </Item>
                     <Item>
                         <h3>HORARIO DE RECEPCIÓN</h3>
@@ -135,30 +147,54 @@ const Footer = props => {
                         <p>FESTIVOS: Consultar</p>
                     </Item>
                     <Item>
-                        <p>
-                            ¡Síguenos! 
-                        </p>
-                        <RedesSociales src={Instagram}/>        
-                        <RedesSociales src={Facebook}/>
+                        <Parrafo> ¡Síguenos! </Parrafo>
+                        <a
+                            href="http://www.instagram.com/excellenceembajadores"
+                            target={"__blank"}
+                            className="instagram social"
+                            >
+                            <FontAwesomeIcon icon={faInstagram} size="2x" />
+                        </a>
+                        <a
+                            href="https://www.facebook.com/excellenceembajadores/"
+                            target={"__blank"}
+                            className="facebook social"
+                            >
+                            <FontAwesomeIcon icon={faFacebook} size="2x"/>
+                        </a>
                     </Item>
                     <Item>
                         <p><strong>Suscríbete a nuestro Newsletter para poder recibir la información
                             más reciente sobre los cursos, talleres, promociones, etc.</strong></p>
+                            
                             <form id="form" onSubmit={handleSubmit}>
-                                <MensajeFooter id="mensaje" placeholder="Quiero saber más sobre..."/>
-                                <RedesSociales src={Whatsapp}/>
+                                <InputContainer>
+                                    <MensajeFooter id="mensaje" placeholder="Quiero saber más sobre..."/>
+                                    <FontAwesomeIcon className="whatsapp"icon={faWhatsapp} size="1x"/>
+                                </InputContainer>
+
                                     <Marg props={"100vh"}/>
                                 <Checkbox type="checkbox" name="aceptarTerminos" id="aceptarTerminos"/>
                                 <CheckboxText> Acepto los términos y condiciones</CheckboxText>
                                     <Error id="error" style={{color:"red"}}></Error>
+             
                                 <Boton>Enviar</Boton>
                                 <Marg props={"100vh"}/>
                             </form>
                     </Item>
                 </SFooterWrapper>
-                </SideMarginsLayout>  
+            </SideMarginsLayout>  
         </SFooterBody>
-    
+
+      <section>
+        <SFooterUl>
+          <SFooterLi SFooterLi>© 2022 EXCELLENCE FORMACION EMBAJADORES. TODOS LOS DERECHOS RESERVADOS</SFooterLi>
+          < SFooterLi><a href="#">AVISO LEGAL | </a></ SFooterLi>
+          < SFooterLi><a href="#"> POLÍTICA DE COOKIES | </a></ SFooterLi>
+          <SFooterLi SFooterLi><a href="#"> POLÍTICA DE DEVOLUCIÓN Y DESESTIMIENTO</a></SFooterLi>
+        </SFooterUl>
+      </section>
+
     </SFooter>
     )
 }
