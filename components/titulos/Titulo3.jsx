@@ -2,7 +2,6 @@ import styled from "styled-components"
 
 const Titulo3 = styled.h1`
     color: var(--secundario-light);
-    /*color: var(--color6);*/
     text-transform: uppercase;
     font-size: 50px;
     /*-webkit-text-stroke: 1px black;
@@ -10,6 +9,9 @@ const Titulo3 = styled.h1`
     text-shadow: -1px 0 black, 1px 0 black, 0 1px black, 0 -1px black
     ${ props => props.center ? "text-align: center;" : "" };
     ${ props => props.fullWidth ? "width: 100%;" : "" };
+    ${ props => props.color ? "var(--secundario-light)" : "var(--color1)" };
+
+
 `
 
 export default Titulo3

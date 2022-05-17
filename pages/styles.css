@@ -3,7 +3,7 @@
 :root {
     --color: #e3c1c1;
     --color1: #f9f3f1;
-    --color2: #f4cdbd;
+    --color2: #FFD0BB;
     --color3: #e9b9a5;
     --color4: #b06f55;
     --color5: #9d5d43;
@@ -56,4 +56,12 @@ a{
     color: var(--color7);
     text-decoration: none;
     transition: letter-spacing .25s;
+}
+
+.focus{
+    transition: box-shadow .25s;
+}
+
+.focus:focus{
+    box-shadow: 0 0 0 5px var(--color7);
 }

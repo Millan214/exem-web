@@ -7,16 +7,8 @@ import OpenIcon from "../icons/OpenIcon"
 import X from "../icons/X"
 import NavBarLink from "./NavBarLink"
 
-const SNavBar = styled.nav.attrs(props => props.location === "/" ? ({
-        style: {
-            background: `rgba(137, 75, 49,${ props.offset/1000 })`
-        }
-    }) : ({
-        style: {
-            background: `var(--color6)`
-        }
-    })
-)`
+const SNavBar = styled.nav`
+    background: var(--color6);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,7 +18,7 @@ const SNavBar = styled.nav.attrs(props => props.location === "/" ? ({
 
     position: fixed;
     top: 0;
-    background-color: transparent;
+    
     width: 100%;
     box-sizing: border-box;
     z-index: 1;

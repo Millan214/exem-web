@@ -47,13 +47,15 @@ const TopCursos = styled.div`
 	float: left;
 	width: 40%;
 `
+
 const CardContainer = styled.div`
   box-shadow: 0 15px 30px 1px var(--color3);
 	overflow: hidden;
-	height: 80vh;
+	height: 100vh;
 	width: 100%;
   display: flex;
   position: relative;
+  text-align: center;
 `
 
 const ImageFull = styled.img`
@@ -63,14 +65,23 @@ const ImageFull = styled.img`
     object-fit: cover;
 `
 
-const ContenedorBanner = styled.div`
-	position: relative;
+const ContenedorBanner1 = styled.div`
+  position: relative;
 	text-align: left;
 	overflow: hidden;
 	padding: 30px;
 	height: 100%;
 	float: left;
-	width: 100%;
+	width: 60%;
+`
+
+const ContenedorBanner2 = styled.div`
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+  display: inline-block;
+  height: 100%;
+  width: 40%;
 `
 
 const ParrafoBanner = styled.p`
@@ -142,15 +153,20 @@ const LandingPage = () => {
   <ScreenHeightLayout>
     <FlexLayout>
       <CardContainer>
+
         <ImageFull src={Vendaje1} alt="banner" />
-            <ContenedorBanner>
+
+            <ContenedorBanner1>
               <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
               <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
+              
               <ParrafoBanner>INICIO: 11 DE MAYO</ParrafoBanner>
-            </ContenedorBanner>
-            <ContenedorBanner>
+            </ContenedorBanner1>
+
+            <ContenedorBanner2>
               <Formulario/>
-            </ContenedorBanner>
+            </ContenedorBanner2>
+
       </CardContainer>
     </FlexLayout>
     </ScreenHeightLayout>
@@ -186,7 +202,7 @@ const LandingPage = () => {
       <SideMarginsLayout>
         <ScreenHeightLayout>
           <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
-            <TarjetaGrande enter={'pide cita ahora'} img={Espalda}>
+            <TarjetaGrande enter={'Más información'} img={Espalda}>
               disfruta de nuestros masajes profesionales
             </TarjetaGrande>
           </FlexLayout>
