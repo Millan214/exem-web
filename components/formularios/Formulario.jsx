@@ -64,9 +64,6 @@ const InputForm = styled.input`
 
 const SelectForm = styled.select`
   font-size:20px;
-  appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
   display: inline-block;
 	width: 100%;
 	cursor: pointer;
