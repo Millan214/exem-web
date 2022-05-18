@@ -162,6 +162,7 @@ const SIntroduceNombre = styled.div`
 const Sala = props => {
 
     const user = useContext(UserContext)
+    const [sala, setSala] = useState(null)
 
     const handleSubmit = e => {
 
@@ -172,49 +173,50 @@ const Sala = props => {
                 domChat.scrollTop = domChat.scrollHeight
             }
 
+            const mensajeTiempo = (msg) => {
+                return {
+                    contenido: msg,
+                    enviado: {
+                        completeDate: new Date(),
+                        dia: new Date().getDate(),
+                        mes: new Date().getMonth() + 1,
+                        h: new Date().getHours(),
+                        min: new Date().getMinutes(),
+                    }
+                }
+            }
+
             const docRef = doc(db, "usuarios", user.user.uid);
             const docSnap = await getDoc(docRef);
 
             //TODO: Almacenar los mensajes en una colección en ved de un objeto como campo
 
-            if (docSnap.exists()) {
-                if (docSnap.data().sala){
-                    setDoc(doc(db, "usuarios", user.user.uid), {
-                        sala: [
-                            ...docSnap.data().sala,
-                            {
-                                contenido: mensaje,
-                                enviado: {
-                                    completeDate: new Date(),
-                                    dia: new Date().getDate(),
-                                    mes: new Date().getMonth() + 1,
-                                    h: new Date().getHours(),
-                                    min: new Date().getMinutes(),
-                                }
-                            }
-                        ]
-                    }).then(() => {
-                        bajarChat()
-                    })
+            getDoc(docRef)
+                .then((value) => {
+                    let data = value.data()
+                    if (data.sala){
+                        setDoc(docRef, {
+                            sala: [
+                                ...data.sala,
+                                mensajeTiempo( mensaje )
+                            ]
+                        }).then(() => {
+                            bajarChat()
+                        })
+    
+                    } else {
+                        setDoc(docRef, {
+                            sala: [
+                                mensajeTiempo( mensaje )
+                            ]
+                        }).then(() => {
+                            bajarChat()
+                        })
+                    }
+                })
 
-                } else {
-                    setDoc(doc(db, "usuarios", user.user.uid), {
-                        sala: [
-                            {
-                                contenido: mensaje,
-                                enviado: {
-                                    completeDate: new Date(),
-                                    dia: new Date().getDate(),
-                                    mes: new Date().getMonth() + 1,
-                                    h: new Date().getHours(),
-                                    min: new Date().getMinutes(),
-                                }
-                            }
-                        ]
-                    }).then(() => {
-                        bajarChat()
-                    })
-                }
+            if (docSnap.exists()) {
+                
 
             } else {
                 // doc.data() will be undefined in this case
@@ -236,8 +238,6 @@ const Sala = props => {
         form['mensaje'].value = ""
 
     }
-
-    const [sala, setSala] = useState(null)
 
     useEffect(() => {
         if( user.user ) {
