@@ -9,7 +9,7 @@ import {
 function Map() {
   return (
     <LoadScript id="script-loader" googleMapsApiKey="" version={"weekly"} loadingElement={<div>Cargando...</div>}>
-      <GoogleMap mapContainerStyle={{height: "8em", width: "8em"}} zoom={15} center={{ lat: 40.400954, lng: -3.701046 }}>
+      <GoogleMap mapContainerStyle={{height: "11em", width: "11em", borderRadius: "3%", boxShadow: "var(--shadow)"}} zoom={15} center={{ lat: 40.400954, lng: -3.701046 }}>
         <Marker position={{ lat: 40.400954, lng: -3.701046 }}/>
       </GoogleMap>
     </LoadScript>
