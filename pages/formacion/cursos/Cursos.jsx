@@ -2,7 +2,11 @@ import CiruclarImage from "../../../components/animations/CiruclarImage"
 import { FlexLayout } from "../../../components/layouts/FlexLayout"
 import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
 import Titulo2 from "../../../components/titulos/Titulo2"
-import Person from '../../../components/media/person.jpg';
+import Balines from '../../../components/media/balines.jpg';
+import Deportivo from '../../../components/media/deportivo.jpg';
+import Reflexologia from '../../../components/media/reflexologia1.jpg';
+import Quiromasaje from '../../../components/media/quiromasaje1.jpg';
+import Tailandes from '../../../components/media/tailandes1.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { Link } from "react-router-dom"
 import { useEffect } from "react";
@@ -37,8 +41,8 @@ const Cursos = props => {
                 <div>
                     <Link to="/">
                         <CiruclarImage
-                            img={Person}
-                            alt="person"
+                            img={Deportivo}
+                            alt="deportivo"
                             scale={5}
                             hasText
                             hover
@@ -48,8 +52,8 @@ const Cursos = props => {
                     </Link>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Deportivo}
+                        alt="deportivo"
                         scale={5}
                         hasText
                         hover
@@ -61,8 +65,8 @@ const Cursos = props => {
                 <div>
                     <Link to="/formacion/cursos/quiromasaje">
                         <CiruclarImage
-                            img={Person}
-                            alt="person"
+                            img={Quiromasaje}
+                            alt="quiromasaje"
                             scale={5}
                             hasText
                             hover
@@ -73,35 +77,35 @@ const Cursos = props => {
 
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Reflexologia}
+                        alt="reflexologia"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Reflexología podal</h1>
                     </CiruclarImage>
                 </div>
 
                 <div>
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Balines}
+                        alt="balines"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje balinés</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Tailandes}
+                        alt="tailandes"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje tailandés tradicional</h1>
                     </CiruclarImage>
                 </div>
 
