@@ -15,7 +15,7 @@ import HalfLayout from "../components/layouts/HalfLayout";
 import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
 import { useEffect } from "react";
-import Vendaje1 from "../components/media/vendaje1.jpg";
+import Clase from "../components/media/clase.jpg";
 import Formulario from "../components/formularios/Formulario";
 import Marg from "../components/layouts/Marg";
 import Titulo3 from "../components/titulos/Titulo3";
@@ -154,7 +154,7 @@ const LandingPage = () => {
     <FlexLayout>
       <CardContainer>
 
-        <ImageFull src={Vendaje1} alt="banner" />
+        <ImageFull src={Clase} alt="banner" />
 
             <ContenedorBanner1>
               <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
@@ -202,7 +202,7 @@ const LandingPage = () => {
       <SideMarginsLayout>
         <ScreenHeightLayout>
           <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
-            <TarjetaGrande enter={'Más información'} img={Espalda}>
+            <TarjetaGrande link={'/servicios/masajes-profesionales'} enter={'Más información'} img={Espalda}>
               disfruta de nuestros masajes profesionales
             </TarjetaGrande>
           </FlexLayout>
