@@ -1,8 +1,6 @@
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
 import { useEffect, useState } from "react"
-import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../../auth/AuthProvider"
 import { auth } from "../../firebase/firebaseInit"
 import Admin from "../admin/Admin"
 
