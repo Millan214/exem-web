@@ -2,7 +2,6 @@ import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
 import CiruclarImage from "../../../components/animations/CiruclarImage"
 import { FlexLayout } from "../../../components/layouts/FlexLayout"
 import Titulo2 from "../../../components/titulos/Titulo2"
-import Person from '../../../components/media/person.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { useEffect } from "react";
 import Titulo from "../../../components/titulos/Titulo";
@@ -12,7 +11,17 @@ import Marg from "../../../components/layouts/Marg";
 import Boton from "../../../components/clickables/botones/Boton";
 import { STarjetaHorario, STitulo } from "../../formacion/cursos/quiromasaje/Quiromasaje";
 import Onda from "../../../components/ondas/Onda";
+
 import Catalogo from "../../../components/media/catalogo/catalogo.pdf"
+import Balines from '../../../components/media/balines.jpg';
+import Piernas from '../../../components/media/piernas.jpg';
+import Espalda from '../../../components/media/espalda.jpg';
+import Reflexologia from '../../../components/media/reflexologia1.jpg';
+import Quiromasaje from '../../../components/media/quiromasaje1.jpg';
+import Tailandes from '../../../components/media/tailandes1.jpg';
+import Craneofacial from '../../../components/media/craneofacial.jpg';
+import { Link } from "react-router-dom";
+import ScreenHeightLayout from "../../../components/layouts/ScreenHeightLayout";
 
 /**
  * @param   
@@ -25,6 +34,7 @@ const MasajesProfesionales = props => {
     })
 
     return (
+
         <TopMarginLayout>
 
             <Onda>
@@ -40,71 +50,99 @@ const MasajesProfesionales = props => {
 
             <VLayout margTop={100} up>
 
-                <div>
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Quiromasaje</h1>
-                    </CiruclarImage>
+            <div>
+                    <Link to="/">
+                        <CiruclarImage
+                            img={Espalda}
+                            alt="relajante"
+                            scale={5}
+                            hasText
+                            hover
+                        >
+                            <h1>Relajante-antiestrés</h1>
+                        </CiruclarImage>
+                    </Link>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Quiromasaje}
+                        alt="descontracturante"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo</h1>
+                        <h1>Descontracturante</h1>
+                    </CiruclarImage>
+                </div>
+
+                <div>
+                    <Link to="/quienes-somos">
+                        <CiruclarImage
+                            img={Piernas}
+                            alt="circulatorio"
+                            scale={5}
+                            hasText
+                            hover
+                        >
+                            <h1>Circulatorio</h1>
+                        </CiruclarImage>
+                    </Link>
+
+
+                    <CiruclarImage
+                        img={Reflexologia}
+                        alt="reflexologia"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Reflexología y masaje podal</h1>
                     </CiruclarImage>
                 </div>
 
                 <div>
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Balines}
+                        alt="balines"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Relajante-antiestrés</h1>
+                        <h1>Masaje balinés</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Tailandes}
+                        alt="tailandes"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Reflexología podal</h1>
+                        <h1>Masaje tailandés tradicional</h1>
                     </CiruclarImage>
                 </div>
 
                 <div>
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Piernas}
+                        alt="anticelulitico"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Anticelulítico</h1>
+                        <h1>Masaje anticelulítico</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Craneofacial}
+                        alt="craneofacial"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Craneo-facial</h1>
+                        <h1>Masaje craneo-facial</h1>
                     </CiruclarImage>
                 </div>
+
 
 
             </VLayout>
@@ -208,7 +246,23 @@ const MasajesProfesionales = props => {
                         </STarjetaHorario>
 
                     </FlexLayout>
+                    
+                    <Marg px={100} />
 
+                    <FlexLayout hAlign="center" fullHeight>
+                        <SideMarginsLayout>
+                            <Titulo>catálogo de masajes</Titulo>
+                            <FlexLayout vAlign="center" hAlign="between" gap={20}>
+                                <Subtitulo>¡descárgalo AHORA!</Subtitulo>
+
+                                <a href={Catalogo} download="catalogo">
+                                    <Boton>Descargar</Boton>
+                                </a>
+
+                            </FlexLayout>
+                        </SideMarginsLayout>
+                    </FlexLayout>
+                    <Marg px={100} />
 
                 </FlexLayout>
 

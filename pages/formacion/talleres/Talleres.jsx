@@ -2,7 +2,12 @@ import CiruclarImage from "../../../components/animations/CiruclarImage"
 import { FlexLayout } from "../../../components/layouts/FlexLayout"
 import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
 import Titulo2 from "../../../components/titulos/Titulo2"
-import Person from '../../../components/media/person.jpg';
+import Vendaje from '../../../components/media/vendaje1.jpg';
+import Piernas from '../../../components/media/piernas.jpg';
+import Estiramientos from '../../../components/media/estiramientos.jpg';
+import Podal from '../../../components/media/podal.jpg';
+import Cuello from '../../../components/media/cuello.jpg';
+import Espalda from '../../../components/media/espalda.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { useEffect } from "react";
 import Onda from "../../../components/ondas/Onda";
@@ -33,67 +38,67 @@ const Talleres = props => {
 
                 <div>
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Espalda}
+                        alt="espalda"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje de espalda</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Cuello}
+                        alt="cuello"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
-                    </CiruclarImage>
-                </div>
-
-                <div>
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
-                    </CiruclarImage>
-
-                    <CiruclarImage
-                        img={Person}
-                        alt="person"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje cervical, cuello y facial</h1>
                     </CiruclarImage>
                 </div>
 
                 <div>
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Podal}
+                        alt="podal"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje podal</h1>
                     </CiruclarImage>
 
                     <CiruclarImage
-                        img={Person}
-                        alt="person"
+                        img={Piernas}
+                        alt="piernas"
                         scale={5}
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje de piernas</h1>
+                    </CiruclarImage>
+                </div>
+
+                <div>
+                    <CiruclarImage
+                        img={Estiramientos}
+                        alt="estiramientos"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Movilizaciones y estiramientos</h1>
+                    </CiruclarImage>
+
+                    <CiruclarImage
+                        img={Vendaje}
+                        alt="vendaje"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Vendaje neuromuscular (básico)</h1>
                     </CiruclarImage>
                 </div>
 

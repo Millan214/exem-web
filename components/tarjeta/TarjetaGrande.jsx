@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { FlexLayout } from "../layouts/FlexLayout"
 
@@ -31,6 +32,14 @@ const SBody = styled.div`
 
     svg{
         fill: var(--color5);
+
+        &:hover {
+            fill: var(--secundario-light);
+        }
+
+        &:active{
+            transform: translateY(2px);
+        }
     }
 
     span{
@@ -38,11 +47,9 @@ const SBody = styled.div`
         color: var(--color5);
     }
 
-    div{
-        
+    div{   
         transform: translateX(3%);
     }
-
 `
 
 const TarjetaGrande = props => {
@@ -52,7 +59,9 @@ const TarjetaGrande = props => {
             <SBody>
                 <h1>{ props.children }</h1>
                 <FlexLayout hAlign={'right'} vAlign={'center'}>
-                    <span>{ props.enter }</span>
+                    <Link to={ props.link }>
+                        <span>{ props.enter }</span>
+                    </Link>
                     <svg xmlns="http://www.w3.org/2000/svg" height={40} viewBox="0 0 20 20" fill="currentColor">
                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                     </svg>

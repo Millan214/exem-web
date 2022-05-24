@@ -3,9 +3,11 @@ import { useContext } from "react"
 import { Link, useLocation } from "react-router-dom"
 import styled from "styled-components"
 import { ScrollOffsetContext } from "../../pages/App"
+import ExemTextIcon from "../icons/ExemTextIcon"
 import OpenIcon from "../icons/OpenIcon"
 import X from "../icons/X"
 import NavBarLink from "./NavBarLink"
+import { AuthContext } from "../../auth/AuthProvider"
 
 const SNavBar = styled.nav`
     background: var(--color6);
@@ -119,6 +121,7 @@ const SOpenIcon = styled.div`
 const NavBar = () => {
 
     const location = useLocation()
+    
 
     const offset = useContext(ScrollOffsetContext)
 
@@ -141,7 +144,9 @@ const NavBar = () => {
     return (
         <SNavBar { ...offset } location = { location.pathname } >
             <SNavBarLeft>
-                <NavBarLink to="/">exem</NavBarLink>
+                <Link to="/">
+                    <ExemTextIcon/>
+                </Link>
             </SNavBarLeft>
             <SNavBarCenter id="navBarCenter">
                 <SCloseIcon onClick={ () => openSidebar() }>
@@ -172,7 +177,7 @@ const NavBar = () => {
             </SNavBarCenter>
 
             <SNavBarRight>
-                <NavBarLink to="/">enlace</NavBarLink>
+                <NavBarLink to="/admin">soy excelente</NavBarLink>
                 <SOpenIcon onClick={ () => closeSidebar() }>
                     <OpenIcon />
                 </SOpenIcon>

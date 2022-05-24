@@ -15,10 +15,11 @@ import HalfLayout from "../components/layouts/HalfLayout";
 import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
 import { useEffect } from "react";
-import Vendaje1 from "../components/media/vendaje1.jpg";
+import Clase from "../components/media/clase.jpg";
 import Formulario from "../components/formularios/Formulario";
 import Marg from "../components/layouts/Marg";
 import Titulo3 from "../components/titulos/Titulo3";
+import { MarginTopAndBottom } from "../components/layouts/MarginTopAndBottom";
 
 const SVideo = styled.video`
   position: absolute;
@@ -109,9 +110,8 @@ const LandingPage = () => {
         <path d="M0 141V0H1920V178.5C1766.17 131.167 1365.8 57.4 995 141C624.2 224.6 177.167 175.833 0 141Z" fill="var(--color1)" />
       </svg>
 
-      <SideMarginsLayout>
-        <ScreenHeightLayout>
-          <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
+      <MarginTopAndBottom>
+          <FlexLayout vAlign={'center'} hAlign={'center'}>
             <FlexLayout hAlign={'center'} wrap>
               <FlowerBox
                 content={<>
@@ -147,14 +147,13 @@ const LandingPage = () => {
               />
             </FlexLayout>
           </FlexLayout>
-        </ScreenHeightLayout>
-      </SideMarginsLayout>
+        </MarginTopAndBottom>
 
   <ScreenHeightLayout>
     <FlexLayout>
       <CardContainer>
 
-        <ImageFull src={Vendaje1} alt="banner" />
+        <ImageFull src={Clase} alt="banner" />
 
             <ContenedorBanner1>
               <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
@@ -169,7 +168,7 @@ const LandingPage = () => {
 
       </CardContainer>
     </FlexLayout>
-    </ScreenHeightLayout>
+  </ScreenHeightLayout>
 
 
       <SideMarginsLayout>
@@ -202,7 +201,7 @@ const LandingPage = () => {
       <SideMarginsLayout>
         <ScreenHeightLayout>
           <FlexLayout vAlign={'center'} hAlign={'center'} screenHeight>
-            <TarjetaGrande enter={'Más información'} img={Espalda}>
+            <TarjetaGrande link={'/servicios/masajes-profesionales'} enter={'Más información'} img={Espalda}>
               disfruta de nuestros masajes profesionales
             </TarjetaGrande>
           </FlexLayout>
