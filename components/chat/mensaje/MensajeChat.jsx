@@ -2,20 +2,20 @@ import styled from "styled-components"
 
 const SMensajeWrapper = styled.div`
     display: flex;
-    justify-content: ${ props => props.right ? 'right' : 'left' };
+    justify-content: ${ props => props.left ? 'left' : 'right' };
 `
 
 const SMensajeBody = styled.div`
     
     padding: 10px;
-    border-radius: 10px 10px 10px 0;
+    border-radius: 10px 10px 0 10px;
     font-size: 16px;
 
     max-width: 75%;
 
-    ${ props => props.right ? 'border-radius: 10px 10px 0 10px' : '' };
-    background: ${ props => props.right ? 'var(--color6)' : 'var(--color3)' };
-    color: ${ props => props.right ? 'var(--color1)' : 'var(--color7)' };
+    ${ props => props.left ? 'border-radius: 10px 10px 10px 0' : '' };
+    background: ${ props => props.left ? 'var(--color3)' : 'var(--color6)' };
+    color: ${ props => props.left ? 'var(--color7)' : 'var(--color1)' };
     font-weight: 500;
 
 `
