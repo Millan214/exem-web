@@ -6,6 +6,7 @@ import { ScrollOffsetContext } from "../../pages/App"
 import OpenIcon from "../icons/OpenIcon"
 import X from "../icons/X"
 import NavBarLink from "./NavBarLink"
+import { AuthContext } from "../../auth/AuthProvider"
 
 const SNavBar = styled.nav`
     background: var(--color6);
@@ -119,6 +120,7 @@ const SOpenIcon = styled.div`
 const NavBar = () => {
 
     const location = useLocation()
+    const { currentUser } = useContext(AuthContext)
 
     const offset = useContext(ScrollOffsetContext)
 
@@ -137,7 +139,7 @@ const NavBar = () => {
             easing: 'easeInOutQuad'
         })
     }
-
+    
     return (
         <SNavBar { ...offset } location = { location.pathname } >
             <SNavBarLeft>
@@ -172,11 +174,12 @@ const NavBar = () => {
             </SNavBarCenter>
 
             <SNavBarRight>
-                <NavBarLink to="/">enlace</NavBarLink>
+                <NavBarLink to="/admin">soy excelente</NavBarLink>
                 <SOpenIcon onClick={ () => closeSidebar() }>
                     <OpenIcon />
                 </SOpenIcon>
             </SNavBarRight>
+            
         </SNavBar>
     )
 }

@@ -226,6 +226,7 @@ const Sala = props => {
             const mensajeTiempo = (msg) => {
                 return {
                     contenido: msg,
+                    sender: user.user.uid,
                     enviado: {
                         completeDate: new Date(),
                         dia: new Date().getDate(),
@@ -290,14 +291,13 @@ const Sala = props => {
     const updateMsgs = () => {
         if (user.user) {
             onSnapshot(doc(db, "usuarios", user.user.uid), (docRef) => {
-
                 let msgs = []
                 if (docRef.data().sala) {
                     docRef.data().sala.forEach((mensaje) => {
                         msgs = [
                             ...msgs,
                             <MensajeChat
-                                right
+                                left = { user.user.uid != mensaje.sender }
                                 time={`${mensaje.enviado.h}:${mensaje.enviado.min}`}
                             >
                                 {mensaje.contenido}
