@@ -21,6 +21,7 @@ import Quiromasaje from '../../../components/media/quiromasaje1.jpg';
 import Tailandes from '../../../components/media/tailandes1.jpg';
 import Craneofacial from '../../../components/media/craneofacial.jpg';
 import { Link } from "react-router-dom";
+import ScreenHeightLayout from "../../../components/layouts/ScreenHeightLayout";
 
 /**
  * @param   
@@ -33,6 +34,7 @@ const MasajesProfesionales = props => {
     })
 
     return (
+
         <TopMarginLayout>
 
             <Onda>
@@ -244,7 +246,23 @@ const MasajesProfesionales = props => {
                         </STarjetaHorario>
 
                     </FlexLayout>
+                    
+                    <Marg px={100} />
 
+                    <FlexLayout hAlign="center" fullHeight>
+                        <SideMarginsLayout>
+                            <Titulo>catálogo de masajes</Titulo>
+                            <FlexLayout vAlign="center" hAlign="between" gap={20}>
+                                <Subtitulo>¡descárgalo AHORA!</Subtitulo>
+
+                                <a href={Catalogo} download="catalogo">
+                                    <Boton>Descargar</Boton>
+                                </a>
+
+                            </FlexLayout>
+                        </SideMarginsLayout>
+                    </FlexLayout>
+                    <Marg px={100} />
 
                 </FlexLayout>
 

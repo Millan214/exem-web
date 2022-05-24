@@ -3,11 +3,11 @@ import { useContext } from "react"
 import { Link, useLocation } from "react-router-dom"
 import styled from "styled-components"
 import { ScrollOffsetContext } from "../../pages/App"
-import ExemTextIcon from "../icons/ExemTextIcon"
 import OpenIcon from "../icons/OpenIcon"
 import X from "../icons/X"
 import NavBarLink from "./NavBarLink"
 import { AuthContext } from "../../auth/AuthProvider"
+import ExemTextIcon from "../icons/ExemTextIcon"
 
 const SNavBar = styled.nav`
     background: var(--color6);
@@ -121,7 +121,7 @@ const SOpenIcon = styled.div`
 const NavBar = () => {
 
     const location = useLocation()
-    
+    const { currentUser } = useContext(AuthContext)
 
     const offset = useContext(ScrollOffsetContext)
 
@@ -140,7 +140,7 @@ const NavBar = () => {
             easing: 'easeInOutQuad'
         })
     }
-
+    
     return (
         <SNavBar { ...offset } location = { location.pathname } >
             <SNavBarLeft>
@@ -182,6 +182,7 @@ const NavBar = () => {
                     <OpenIcon />
                 </SOpenIcon>
             </SNavBarRight>
+            
         </SNavBar>
     )
 }

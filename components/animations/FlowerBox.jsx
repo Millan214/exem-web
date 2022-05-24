@@ -14,8 +14,8 @@ const SBackgroundPetal = styled.div`
     background: var(--color3);
     border-radius: 30px;
 
-    width: 110px;
-    height: 110px;
+    width: 160px;
+    height: 160px;
 
     position: absolute;
 `
@@ -24,8 +24,8 @@ const SForegroundPetal = styled.div`
     background: var(--color2);
     border-radius: 30px;
 
-    width: 110px;
-    height: 110px;
+    width: 160px;
+    height: 160px;
 
     transform: rotate(45deg);
 
@@ -41,8 +41,8 @@ const SContentPetal = styled.div`
 
     background: var(--color1);
 
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 
     font-weight: bold;
     color: var(--color6);

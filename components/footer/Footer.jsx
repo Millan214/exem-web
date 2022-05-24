@@ -14,6 +14,7 @@ import Social from "../icons/Social.css";
 import LinkEstandar from "../clickables/enlaces/LinkEstandar"
 
 const SFooter = styled.footer`
+margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -144,7 +145,7 @@ const Footer = props => {
                 <path d="M1920 189.182V234H0L0.000134665 173.485C335 83.5121 403.006 218.62 767.5 173.485C1022.5 141.907 1425 92.0933 1920 189.182Z" fill="var(--color2)"/>
             </svg>
              
-        <SFooterBody>
+        <SFooterBody id="footer">
             <> 
                 <SFooterWrapper>
                     <Item>
