@@ -67,3 +67,44 @@ a{
 .focus:focus{
     box-shadow: 0 0 0 5px var(--color7);
 }
+
+.mensaje {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: hsl(0, 72%, 52%);
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    margin: 10px;
+
+    color: var(--color1);
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%)
+    }
+}
+
+.mensaje svg {
+    width: 25px;
+    height: 25px;
+}
