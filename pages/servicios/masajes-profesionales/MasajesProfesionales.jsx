@@ -23,6 +23,7 @@ import Craneofacial from '../../../components/media/craneofacial.jpg';
 import { Link } from "react-router-dom";
 import ScreenHeightLayout from "../../../components/layouts/ScreenHeightLayout";
 
+
 /**
  * @param   
  * @returns Styled Component
@@ -51,8 +52,8 @@ const MasajesProfesionales = props => {
             <VLayout margTop={100} up>
 
             <div>
-                    <Link to="/">
-                        <CiruclarImage
+                    
+                    <CiruclarImage
                             img={Espalda}
                             alt="relajante"
                             scale={5}
@@ -60,8 +61,8 @@ const MasajesProfesionales = props => {
                             hover
                         >
                             <h1>Relajante-antiestrés</h1>
-                        </CiruclarImage>
-                    </Link>
+                    </CiruclarImage>
+                    
 
                     <CiruclarImage
                         img={Quiromasaje}
@@ -72,11 +73,8 @@ const MasajesProfesionales = props => {
                     >
                         <h1>Descontracturante</h1>
                     </CiruclarImage>
-                </div>
-
-                <div>
-                    <Link to="/quienes-somos">
-                        <CiruclarImage
+                    
+                    <CiruclarImage
                             img={Piernas}
                             alt="circulatorio"
                             scale={5}
@@ -84,10 +82,10 @@ const MasajesProfesionales = props => {
                             hover
                         >
                             <h1>Circulatorio</h1>
-                        </CiruclarImage>
-                    </Link>
+                    </CiruclarImage>
+                </div> 
 
-
+                <div>
                     <CiruclarImage
                         img={Reflexologia}
                         alt="reflexologia"
@@ -97,9 +95,8 @@ const MasajesProfesionales = props => {
                     >
                         <h1>Reflexología y masaje podal</h1>
                     </CiruclarImage>
-                </div>
 
-                <div>
+
                     <CiruclarImage
                         img={Balines}
                         alt="balines"

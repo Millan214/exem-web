@@ -6,10 +6,10 @@ import emailjs from 'emailjs-com';
 import Titulo4 from '../titulos/Titulo4';
 
 const SInput = styled.input`
-    height: 20em;
+  height: 20em;
 `
-const SError = styled.p`
-  
+export const Error = styled.p`
+  color: red;
 `;
 
 const BotonForm = styled.button`
@@ -65,6 +65,7 @@ const InputForm = styled.input`
 const SelectForm = styled.select`
   font-size:20px;
   display: inline-block;
+  background-color: white;
 	width: 100%;
 	cursor: pointer;
   padding: 7px 10px;

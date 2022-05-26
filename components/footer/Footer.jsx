@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Social from "../icons/Social.css";
 import LinkEstandar from "../clickables/enlaces/LinkEstandar"
+import { Error } from "../formularios/Formulario";
 
 const SFooter = styled.footer`
 margin-top: 20px;
@@ -90,10 +91,6 @@ export const MensajeFooter = styled.input`
 
 export const Checkbox = styled.input`
     
-`;
-
-export const Error = styled.p`
-  
 `;
 
 const FooterLinkContainer = styled.div`
@@ -200,7 +197,7 @@ const Footer = props => {
                                     <Marg props={"100vh"}/>
                                 <Checkbox type="checkbox" name="aceptarTerminos" id="aceptarTerminos"/>
                                 <CheckboxText> Acepto los términos y condiciones</CheckboxText>
-                                    <Error id="error" style={{color:"red"}}></Error>
+                                    <Error id="error"></Error>
              
                                 <Boton style={{marginTop: '0.4em'}}>Enviar</Boton>
                                 <Marg props={"100vh"}/>

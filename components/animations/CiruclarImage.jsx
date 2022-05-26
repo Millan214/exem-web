@@ -22,6 +22,7 @@ const SWrapper = styled.div`
     &:hover img{
         ${ props => props.hover ? 'border-radius: 15%' : ''};
     }
+
 `
 
 const SCustomPetal = styled.div`

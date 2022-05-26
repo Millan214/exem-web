@@ -72,9 +72,14 @@ const QuienesSomos = props => {
                         </p>
                     </FlexLayout>
                 </HalfLayout>
+
+                
             </SideMarginsLayout>
-            <VLayout margTop={100} up>
-
+            
+            <VLayout margTop={200} up/>
+                <Titulo center fullWidth>Nuestros profesores</Titulo>
+            <VLayout margTop={50} up>
+                
                 <div>
                     <CiruclarImage
                         img={Banner}
@@ -83,7 +88,7 @@ const QuienesSomos = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                    <h1>Juan Manzanares</h1>
                     </CiruclarImage>
                 </div>
 
@@ -95,7 +100,7 @@ const QuienesSomos = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Luis Jimenez</h1>
                     </CiruclarImage>
                 </div>
 
@@ -107,7 +112,7 @@ const QuienesSomos = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Carlos Sanchez</h1>
                     </CiruclarImage>
                 </div>
 

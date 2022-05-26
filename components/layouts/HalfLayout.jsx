@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 const SHalf = styled.div`
-    width: 50%;
     @media (max-width: 1000px) {
         width: ${ props => props.wrap ? '100%' : '50%' };
     }

@@ -47,7 +47,7 @@ const SContentPetal = styled.div`
     font-weight: bold;
     color: var(--color6);
 
-    font-size: 30px;
+    font-size: 50px;
 
     z-index: 2;
 `
@@ -56,13 +56,12 @@ const SContentPetalText = styled.div`
     color: var(--color4);
     font-weight: bold;
     font-size: 20px;
-
+    margin-top: 3em;
     text-align: center;
     text-transform: uppercase;
     width: 150px;
-
     position: absolute;
-
+    z-index: 5;
     transform: translateY(100px);
 `
 

@@ -32,19 +32,18 @@ const SBody = styled.div`
 
     svg{
         fill: var(--color5);
-
-        &:hover {
-            fill: var(--secundario-light);
-        }
-
-        &:active{
-            transform: translateY(2px);
-        }
     }
 
     span{
         font-weight: bold;
         color: var(--color5);
+        &:hover {
+            color: var(--secundario-light);
+        }
+
+        &:active{
+            transform: translateY(2px);
+        }
     }
 
     div{   

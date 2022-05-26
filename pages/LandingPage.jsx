@@ -112,10 +112,10 @@ const LandingPage = () => {
 
       <MarginTopAndBottom>
           <FlexLayout vAlign={'center'} hAlign={'center'}>
-            <FlexLayout hAlign={'center'} wrap="true">
+            <FlexLayout hAlign={'center'} wrap>
               <FlowerBox
                 content={<>
-                  10
+                  +30
                 </>}
                 text={<>
                   años de experiencia
@@ -123,7 +123,7 @@ const LandingPage = () => {
               />
               <FlowerBox
                 content={<>
-                  12
+                  +12
                 </>}
                 text={<>
                   masajes distintos
@@ -131,7 +131,7 @@ const LandingPage = () => {
               />
               <FlowerBox
                 content={<>
-                  18
+                  +18
                 </>}
                 text={<>
                 cursos
@@ -213,7 +213,7 @@ const LandingPage = () => {
     <ScreenHeightLayout>
         <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
           <Titulo>reseñas de nuestros clientes</Titulo>
-          <FlexLayout hAlign={'center'} wrap="true">
+          <FlexLayout hAlign={'center'} wrap>
 
             <Tarjeta
               imagen={Person}

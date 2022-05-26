@@ -13,6 +13,9 @@ import Subtitulo from "../../../../components/titulos/Subtitulo"
 import Marg from "../../../../components/layouts/Marg"
 import Boton from "../../../../components/clickables/botones/Boton"
 import VLayout from "../../../../components/layouts/VLayout"
+import Deportivo from '../../../../components/media/deportivo.jpg';
+import Reflexologia from '../../../../components/media/reflexologia1.jpg';
+import { Link } from "react-router-dom"
 
 export const STitulo = styled.h1`
     margin: 0;
@@ -290,11 +293,10 @@ const Quiromasaje = props => {
                 </FlexLayout>
 
                 <Titulo>¡apuntate!</Titulo>
-                <Subtitulo>
-                    Reserva tu plaza
+                <Subtitulo center>
+                    Reserva tu plaza...
                 </Subtitulo>
-                <Marg px={10} />
-                <Titulo2 center>ahora 199€</Titulo2>
+                <Titulo2 center>ahora por solo 199€</Titulo2>
                 <FlexLayout hAlign='between' gap={10} wrap>
                     <SReservaCarta>
                         <STitulo2>Turno Dia</STitulo2>
@@ -324,36 +326,44 @@ const Quiromasaje = props => {
                         </FlexLayout>
                     </SReservaCarta>
                 </FlexLayout>
-
+            
+                <VLayout margTop={200} up/>
+                <Titulo center fullWidth>Cursos relacionados</Titulo>
+                
             </SideMarginsLayout>
 
-            <VLayout margTop={100} up>
+            <VLayout margTop={50} up>
 
                 <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
-                        img={Mas3}
-                        alt="Mas3"
+                        img={Deportivo}
+                        alt="deportivo"
                         scale={5}
                         hasText
                         hover
                     >
                         <h1>Deportivo profesional</h1>
                     </CiruclarImage>
+                </Link>
                 </div>
 
                 <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
-                        img={Mas3}
-                        alt="Mas3"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Deportivo profesional</h1>
+                            img={Reflexologia}
+                            alt="reflexologia"
+                            scale={5}
+                            hasText
+                            hover
+                        >
+                            <h1>Reflexología podal</h1>
                     </CiruclarImage>
+                </Link>
                 </div>
 
                 <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Mas3}
                         alt="Mas3"
@@ -361,8 +371,9 @@ const Quiromasaje = props => {
                         hasText
                         hover
                     >
-                        <h1>Deportivo profesional</h1>
+                        <h1>Masaje anticelulítico</h1>
                     </CiruclarImage>
+                </Link>
                 </div>
 
 

@@ -8,7 +8,6 @@ import { auth, db } from "../../../firebase/firebaseInit"
 import { doc, setDoc, onSnapshot, getDoc } from "firebase/firestore"
 import X from "../../icons/X"
 import ChatIcon from "../../icons/ChatIcon"
-import Boton from "../../clickables/botones/Boton"
 
 const SWrapper = styled.form`
     position: fixed;
@@ -166,7 +165,6 @@ const SIntroduceNombre = styled.div`
         border: none;
         outline: none;
         background-color: var(--color7);
-        z-index: 200;
 
         border-radius: 0 0 50% 50%;
         border: 5px solid var(--color5);
@@ -246,9 +244,7 @@ const Sala = props => {
                 .then((value) => {
                     let data = value.data()
                     if (data.sala) {
-                        
                         setDoc(docRef, {
-                            name: auth.currentUser.displayName,
                             sala: [
                                 ...data.sala,
                                 mensajeTiempo(mensaje)
@@ -259,7 +255,6 @@ const Sala = props => {
 
                     } else {
                         setDoc(docRef, {
-                            name: auth.currentUser.displayName,
                             sala: [
                                 mensajeTiempo(mensaje)
                             ]
@@ -294,15 +289,15 @@ const Sala = props => {
     }
 
     const updateMsgs = () => {
-        if (auth.currentUser) {
-            onSnapshot(doc(db, "usuarios", auth.currentUser.uid), (docRef) => {
+        if (user.user) {
+            onSnapshot(doc(db, "usuarios", user.user.uid), (docRef) => {
                 let msgs = []
                 if (docRef.data().sala) {
                     docRef.data().sala.forEach((mensaje) => {
                         msgs = [
                             ...msgs,
                             <MensajeChat
-                                left = { user.user.uid !== mensaje.sender }
+                                left = { user.user.uid != mensaje.sender }
                                 time={`${mensaje.enviado.h}:${mensaje.enviado.min}`}
                             >
                                 {mensaje.contenido}
@@ -342,16 +337,15 @@ const Sala = props => {
     }, [chatVisible])
 
     /**
-     * lo de auth.currentUser? -> la interogación es para que solo se ejecute cuando user.user exista,
+     * lo de user.user? -> la interogación es para que solo se ejecute cuando user.user exista,
      * porque como updateProfile es una promesa, a veces tarda un poco
      */
     return (
         <>
             <SWrapper onSubmit={handleSubmit} id="chatwrapper">
-                <SIntroduceNombre display={auth.currentUser?.displayName}>
+                <SIntroduceNombre display={user.user?.displayName}>
                     <h1>¿Como te llamas?</h1>
                     <input type="text" name="nombre" className="focus" placeholder="introduce tu nombre" autoComplete="off" spellCheck="false" />
-                    <Boton>entrar</Boton>
                 </SIntroduceNombre>
                 <SCabecera>
                     <SNotClaimed>¡Escríbenos!</SNotClaimed>

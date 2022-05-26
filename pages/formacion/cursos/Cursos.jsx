@@ -39,7 +39,7 @@ const Cursos = props => {
             <VLayout margTop={100} up>
 
                 <div>
-                    <Link to="/">
+                    <Link to="/formacion/cursos/quiromasaje">
                         <CiruclarImage
                             img={Deportivo}
                             alt="deportivo"
@@ -50,7 +50,8 @@ const Cursos = props => {
                             <h1>Deportivo profesional</h1>
                         </CiruclarImage>
                     </Link>
-
+                
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Deportivo}
                         alt="deportivo"
@@ -60,6 +61,7 @@ const Cursos = props => {
                     >
                         <h1>Deportivo profesional</h1>
                     </CiruclarImage>
+                </Link>
                 </div>
 
                 <div>
@@ -75,19 +77,21 @@ const Cursos = props => {
                         </CiruclarImage>
                     </Link>
 
-
-                    <CiruclarImage
-                        img={Reflexologia}
-                        alt="reflexologia"
-                        scale={5}
-                        hasText
-                        hover
-                    >
-                        <h1>Reflexología podal</h1>
-                    </CiruclarImage>
+                    <Link to="/formacion/cursos/quiromasaje">
+                        <CiruclarImage
+                            img={Reflexologia}
+                            alt="reflexologia"
+                            scale={5}
+                            hasText
+                            hover
+                        >
+                            <h1>Reflexología podal</h1>
+                        </CiruclarImage>
+                    </Link>
                 </div>
 
                 <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Balines}
                         alt="balines"
@@ -97,7 +101,9 @@ const Cursos = props => {
                     >
                         <h1>Masaje balinés</h1>
                     </CiruclarImage>
+                </Link>
 
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Tailandes}
                         alt="tailandes"
@@ -107,8 +113,8 @@ const Cursos = props => {
                     >
                         <h1>Masaje tailandés tradicional</h1>
                     </CiruclarImage>
+                </Link>
                 </div>
-
 
             </VLayout>
         </TopMarginLayout>
