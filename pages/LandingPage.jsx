@@ -112,7 +112,7 @@ const LandingPage = () => {
 
       <MarginTopAndBottom>
           <FlexLayout vAlign={'center'} hAlign={'center'}>
-            <FlexLayout hAlign={'center'} wrap>
+            <FlexLayout hAlign={'center'} wrap="true">
               <FlowerBox
                 content={<>
                   10
@@ -213,7 +213,7 @@ const LandingPage = () => {
     <ScreenHeightLayout>
         <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
           <Titulo>reseñas de nuestros clientes</Titulo>
-          <FlexLayout hAlign={'center'} wrap>
+          <FlexLayout hAlign={'center'} wrap="true">
 
             <Tarjeta
               imagen={Person}

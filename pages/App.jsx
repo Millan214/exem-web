@@ -15,18 +15,17 @@ export const UserContext = createContext(null)
 
 const App = () => {
 
-  const [offset, setOffset] = useState(window.scrollY)
   const [user, setUser] = useState(null)
 
   const anonymousLogin = () => {
     signInAnonymously(auth)
       .then((userImp) => {
         setUser(userImp.user)
-        
+
         setDoc(doc(db, "usuarios", userImp.user.uid), {
           name: userImp.user.displayName,
         }).then((value) => {
-          console.log(value)
+          //console.log(value)
         })
 
       })
@@ -41,12 +40,10 @@ const App = () => {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <ScrollOffsetContext.Provider value={{ offset }}>
-        <NavBar />
-        <Outlet />
-        <Sala floating />
-        <Footer />
-      </ScrollOffsetContext.Provider>
+      <NavBar />
+      <Outlet />
+      <Sala floating />
+      <Footer />
     </UserContext.Provider>
   );
 }

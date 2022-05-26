@@ -63,7 +63,7 @@ export const FlexLayout = styled.div`
     display: flex;
     gap: ${props => props.gap ? props.gap+'px' : '0'};
     flex-direction: ${ props => props.column ? 'column' : 'row' };
-    flex-wrap: ${ props => props.wrap ? 'wrap' : 'nowrap' };
+    ${ props => props.wrap=="true" ? 'flex-wrap: wrap' : 'flex-wrap: nowrap' };
     align-items: ${ props => verticalAlign( props.vAlign ) };
     justify-content: ${ props => horizontalAlign( props.hAlign ) };
     ${ props => props.screenHeight ? 'height: 100vh !important' : 'height: auto' };
