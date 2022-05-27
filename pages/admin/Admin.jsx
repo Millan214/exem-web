@@ -11,7 +11,7 @@ import { FlexLayout } from "../../components/layouts/FlexLayout"
 import Boton from "../../components/clickables/botones/Boton"
 import Sala from "../../components/chat/sala/Sala"
 import { SideMarginsLayout } from "../../components/layouts/SideMarginsLayout"
-import { collection, query, where, getDocs, getDoc, doc, onSnapshot } from "firebase/firestore";
+import { collection, query, where, getDocs, getDoc, doc, onSnapshot, setDoc } from "firebase/firestore";
 import { useState } from "react"
 import mensaje from "../../components/mensajes/Mensaje"
 import HalfLayout from "../../components/layouts/HalfLayout"
@@ -235,7 +235,56 @@ const Admin = props => {
     const actualizarMensajes = e => {
 
         const enviarMensaje = ( texto ) => {
-            console.log(currentChat)
+
+            const mensajeTiempo = (msg) => {
+                return {
+                    contenido: msg,
+                    sender: auth.currentUser.uid,
+                    enviado: {
+                        completeDate: new Date(),
+                        dia: new Date().getDate(),
+                        mes: new Date().getMonth() + 1,
+                        h: new Date().getHours(),
+                        min: new Date().getMinutes(),
+                    }
+                }
+            }
+
+            const bajarChat = () => {
+                let domChat = document.querySelector('.salaChat')
+                domChat.scrollTop = domChat.scrollHeight
+            }
+
+            const docRef = doc(db, "usuarios", currentChat)
+
+            getDoc(docRef)
+                .then(res => {
+                    const data = res.data()
+                    
+                    if (data.sala) {
+                        setDoc(docRef, {
+                            name: auth.currentUser.displayName,
+                            sala: [
+                                ...data.sala,
+                                mensajeTiempo( texto )
+                            ]
+                        }).then(() => {
+                            bajarChat()
+                        })
+
+                    } else {
+                        setDoc(docRef, {
+                            name: auth.currentUser.displayName,
+                            sala: [
+                                mensajeTiempo( texto )
+                            ]
+                        }).then(() => {
+                            bajarChat()
+                        })
+                    }
+
+                })
+
         }
 
         e.preventDefault()
@@ -251,7 +300,7 @@ const Admin = props => {
             return (
                 <SChatBody onSubmit={ actualizarMensajes } method="POST">
                     <header>Estás hablando con <b>{data.name}</b></header>
-                    <div>
+                    <div className="salaChat">
                         { mensajes }
                     </div>
                     <footer>
@@ -339,7 +388,7 @@ const Admin = props => {
             <br />
             <SideMarginsLayout>
                 <HalfLayout>
-                    {mostrarChat()}
+                    { mostrarChat() }
                     <SListaChat>
                         {chats}
                     </SListaChat>

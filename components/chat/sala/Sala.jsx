@@ -352,7 +352,7 @@ const Sala = props => {
                 <SCabecera>
                     <SNotClaimed>¡Escríbenos!</SNotClaimed>
                 </SCabecera>
-                <SChat id="salaChat">
+                <SChat className="salaChat">
                     {
                         sala
                     }
