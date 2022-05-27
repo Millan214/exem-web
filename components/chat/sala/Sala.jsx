@@ -245,6 +245,7 @@ const Sala = props => {
                     let data = value.data()
                     if (data.sala) {
                         setDoc(docRef, {
+                            name: auth.currentUser.displayName,
                             sala: [
                                 ...data.sala,
                                 mensajeTiempo(mensaje)
@@ -255,6 +256,7 @@ const Sala = props => {
 
                     } else {
                         setDoc(docRef, {
+                            name: auth.currentUser.displayName,
                             sala: [
                                 mensajeTiempo(mensaje)
                             ]
