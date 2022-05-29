@@ -20,9 +20,10 @@ import MensajeChat from "../../components/chat/mensaje/MensajeChat"
 
 const SWrapper = styled.div`
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
     background: var(--color2);
+    padding-bottom: 20px;
 
     h1, h2{
         color: var(--color7);

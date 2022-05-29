@@ -40,6 +40,14 @@ const SVideoContent = styled.div`
   z-index: 2;
 `
 
+const SDownArrow = styled.div`
+  position: absolute;
+  fill: var(--color1);
+  opacity: .5;
+  width: 100px;
+  top: 85%;
+`
+
 const TopCursos = styled.div`
 	text-align: left;
 	overflow: hidden;
@@ -95,7 +103,7 @@ const ParrafoBanner = styled.p`
 const LandingPage = () => {
 
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   })
 
   return (
@@ -104,71 +112,73 @@ const LandingPage = () => {
 
       <SVideoContent>
         <IntroAnimation numPetalos={7} />
+        <SDownArrow>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
+        </SDownArrow>
       </SVideoContent>
 
-      <svg viewBox="0 0 1920 188" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 141V0H1920V178.5C1766.17 131.167 1365.8 57.4 995 141C624.2 224.6 177.167 175.833 0 141Z" fill="var(--color1)" />
-      </svg>
 
       <MarginTopAndBottom>
-          <FlexLayout vAlign={'center'} hAlign={'center'}>
-            <FlexLayout hAlign={'center'} wrap>
-              <FlowerBox
-                content={<>
-                  +30
-                </>}
-                text={<>
-                  años de experiencia
-                </>}
-              />
-              <FlowerBox
-                content={<>
-                  +12
-                </>}
-                text={<>
-                  masajes distintos
-                </>}
-              />
-              <FlowerBox
-                content={<>
-                  +18
-                </>}
-                text={<>
+        <FlexLayout vAlign={'center'} hAlign={'center'}>
+          <FlexLayout hAlign={'center'} wrap>
+            <FlowerBox
+              content={<>
+                +30
+              </>}
+              text={<>
+                años de experiencia
+              </>}
+            />
+            <FlowerBox
+              content={<>
+                +12
+              </>}
+              text={<>
+                masajes distintos
+              </>}
+            />
+            <FlowerBox
+              content={<>
+                +18
+              </>}
+              text={<>
                 cursos
-                </>}
-              />
-              <FlowerBox
-                content={<>
-                  99%
-                </>}
-                text={<>
-                  de satisfacción
-                </>}
-              />
-            </FlexLayout>
+              </>}
+            />
+            <FlowerBox
+              content={<>
+                99%
+              </>}
+              text={<>
+                de satisfacción
+              </>}
+            />
           </FlexLayout>
-        </MarginTopAndBottom>
+        </FlexLayout>
+      </MarginTopAndBottom>
 
-  <ScreenHeightLayout>
-    <FlexLayout>
-      <CardContainer>
+      <ScreenHeightLayout>
+        <FlexLayout>
+          <CardContainer>
 
-        <ImageFull src={Clase} alt="banner" />
+            <ImageFull src={Clase} alt="banner" />
 
             <ContenedorBanner1>
               <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
               <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
-              
+
               <ParrafoBanner>INICIO: 11 DE MAYO</ParrafoBanner>
             </ContenedorBanner1>
 
             <ContenedorBanner2>
-              <Formulario/>
+              <Formulario />
             </ContenedorBanner2>
 
-      </CardContainer>
-    </FlexLayout>
-  </ScreenHeightLayout>
+          </CardContainer>
+        </FlexLayout>
+      </ScreenHeightLayout>
 
 
       <SideMarginsLayout>
@@ -208,9 +218,9 @@ const LandingPage = () => {
         </ScreenHeightLayout>
       </SideMarginsLayout>
 
-    <Marg props={"100vh"}/>
+      <Marg props={"100vh"} />
 
-    <ScreenHeightLayout>
+      <ScreenHeightLayout>
         <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
           <Titulo>reseñas de nuestros clientes</Titulo>
           <FlexLayout hAlign={'center'} wrap>
@@ -253,7 +263,7 @@ const LandingPage = () => {
           </FlexLayout>
         </FlexLayout>
       </ScreenHeightLayout>
-         
+
     </div>
   );
 };

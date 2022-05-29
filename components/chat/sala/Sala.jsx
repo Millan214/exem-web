@@ -8,6 +8,7 @@ import { auth, db } from "../../../firebase/firebaseInit"
 import { doc, setDoc, onSnapshot, getDoc } from "firebase/firestore"
 import X from "../../icons/X"
 import ChatIcon from "../../icons/ChatIcon"
+import Boton from "../../clickables/botones/Boton"
 
 const SWrapper = styled.form`
     position: fixed;
@@ -348,6 +349,7 @@ const Sala = props => {
                 <SIntroduceNombre display={user.user?.displayName}>
                     <h1>¿Como te llamas?</h1>
                     <input type="text" name="nombre" className="focus" placeholder="introduce tu nombre" autoComplete="off" spellCheck="false" />
+                    <Boton> entrar </Boton>
                 </SIntroduceNombre>
                 <SCabecera>
                     <SNotClaimed>¡Escríbenos!</SNotClaimed>

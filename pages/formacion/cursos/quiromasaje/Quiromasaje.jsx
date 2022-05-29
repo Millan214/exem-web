@@ -125,6 +125,7 @@ export const SReservaCarta = styled.div`
 const Quiromasaje = props => {
     return (
         <TopMarginLayout>
+            <Marg px={20}/>
             <SideMarginsLayout>
                 <>
                     <FlexLayout column>
