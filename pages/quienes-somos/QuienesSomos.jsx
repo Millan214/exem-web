@@ -54,7 +54,7 @@ const QuienesSomos = props => {
                         </p>
                         <Marg px="10" />
                         <p>
-                            En Excellence Embajadores nos esforzamos cada día en mejorar nuestras formaciones, 
+                            en Excellence Embajadores nos esforzamos cada día en mejorar nuestras formaciones, 
                             en transmitir nuestros conocimientos desde la experiencia y, en llevar a cabo y poner en práctica, 
                             estudiados protocolos de actuación a nivel profesional. 
                         </p>
