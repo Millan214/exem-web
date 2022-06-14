@@ -5,7 +5,11 @@ import { SideMarginsLayout } from "../../components/layouts/SideMarginsLayout"
 import TopMarginLayout from "../../components/layouts/TopMarginLayout"
 import Titulo2 from "../../components/titulos/Titulo2"
 import { SCaja, SHeadImage, STitulo } from "../formacion/cursos/quiromasaje/Quiromasaje"
-import Banner from "../../components/media/banner.jpg"
+import Persona13 from "../../components/media/personas/Persona13.jpg"
+import Persona7 from "../../components/media/personas/Persona7.jpg"
+import Persona9 from "../../components/media/personas/Persona9.jpg"
+import Quienesomos from "../../components/media/quienes-somos.jpg"
+import Quiromasajistas from "../../components/media/quiromasajistas.jpg"
 import HalfLayout from "../../components/layouts/HalfLayout"
 import CiruclarImage from "../../components/animations/CiruclarImage"
 import Titulo from "../../components/titulos/Titulo"
@@ -29,22 +33,22 @@ const QuienesSomos = props => {
                     <Titulo2 invert>¿quienes somos?</Titulo2>
                     <Marg px="10" />
                 </FlexLayout>
-                <SHeadImage src={Banner} alt="" />
+                <SHeadImage src={Quiromasajistas} alt="" />
                 <Marg vh="10" />
                 <HalfLayout>
                     <FlexLayout vAlign='center' hAlign='center' fullHeight>
                         <CiruclarImage
                             scale={4}
-                            img={Banner}
-                            alt="person"
+                            img={Quienesomos}
+                            alt="quienes somos"
                         >
                         </CiruclarImage>
                     </FlexLayout>
                     <FlexLayout hAlign='left' column fullHeight>
-                        <Titulo2>descubre el equipo excellence embajadores</Titulo2>
+                        <Titulo2>descubre el equipo Exem</Titulo2>
                         <Marg px="10" />
                         <p>
-                            Excellence Embajadores es una estructura creada y pensada para formar a
+                            Exem es una estructura creada y pensada para formar a
                             personas que quieran ser profesionales del fantástico mundo del masaje.
                         </p>
                         <Marg px="10" />
@@ -54,12 +58,7 @@ const QuienesSomos = props => {
                         </p>
                         <Marg px="10" />
                         <p>
-
-                            PAATATAAAA
-
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ullam iure sed iusto molestias consequuntur distinctio explicabo sint minus veritatis. Corrupti laborum, atque voluptates quam omnis maiores repellat voluptate quisquam minima, harum repudiandae eveniet asperiores rem sed eum nihil! Modi, odio? Id inventore harum esse provident dolorum dignissimos sapiente at ratione placeat beatae voluptate nostrum tenetur assumenda tempora eveniet eos tempore, magnam recusandae. Quisquam ullam, dicta doloremque earum perferendis tempore, illum ex itaque deleniti, rem nostrum delectus? Exercitationem veritatis ad illo placeat excepturi labore voluptate! Similique, laborum mollitia consequuntur facere culpa excepturi eius deserunt illo repellendus? Non corporis corrupti sint quam consequuntur, aspernatur quibusdam eveniet vel. Pariatur harum omnis facere vel quae nulla maxime autem sit quia accusamus amet, quod eveniet quos accusantium corporis, sapiente numquam, odio obcaecati modi fugit? Consequuntur eius quia similique ratione eligendi asperiores et ducimus assumenda doloremque, aut voluptatum aliquid mollitia dolorem saepe fugit repudiandae dolorum possimus modi reiciendis minima cumque sed! Doloremque recusandae quisquam animi qui, blanditiis quod non beatae iure unde, dolorem porro magnam provident eos dolore rerum ea suscipit? Molestiae illo tenetur nisi repellat eum accusantium repellendus quisquam rem doloribus qui, praesentium repudiandae iste unde eligendi, tempore aliquam consectetur distinctio ut quaerat recusandae.
-
-                            En Excellence Embajadores nos esforzamos cada día en mejorar nuestras formaciones,
+                            En Exem nos esforzamos cada día en mejorar nuestras formaciones,
                             en transmitir nuestros conocimientos desde la experiencia y, en llevar a cabo y poner en práctica,
                             estudiados protocolos de actuación a nivel profesional.
                         </p>
@@ -87,8 +86,8 @@ const QuienesSomos = props => {
 
                 <div>
                     <CiruclarImage
-                        img={Banner}
-                        alt="Banner"
+                        img={Persona9}
+                        alt="Persona9"
                         scale={5}
                         hasText
                         hover
@@ -99,8 +98,8 @@ const QuienesSomos = props => {
 
                 <div>
                     <CiruclarImage
-                        img={Banner}
-                        alt="Banner"
+                        img={Persona13}
+                        alt="Persona13"
                         scale={5}
                         hasText
                         hover
@@ -111,8 +110,8 @@ const QuienesSomos = props => {
 
                 <div>
                     <CiruclarImage
-                        img={Banner}
-                        alt="Banner"
+                        img={Persona7}
+                        alt="Persona7"
                         scale={5}
                         hasText
                         hover

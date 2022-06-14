@@ -85,20 +85,20 @@ const Form = styled.form`
 
 const Formulario = () => {
 
-  const frmContact = { nombre:', nombre:', email:', email:', telefono:', telefono:', curso:', curso:' };
+  const frmContact = { nombre:', nombre:',  apellidos:', apellidos:', email:', email:', telefono:', telefono:', curso:', curso:' };
   const [setContact] = useState(frmContact);
 
   const { register, formState: {errors}, handleSubmit } = useForm();
 
   const onSubmit = (data) =>{
     console.log(data)
-    const frmContact = { nombre: data.nombre, email: data.email, telefono: data.telefono, curso: data.curso };
+    const frmContact = { nombre: data.nombre, apellidos: data.apellidos, email: data.email, telefono: data.telefono, curso: data.curso };
     
     console.log(frmContact)
       emailjs.send('service_9omzxg5','template_wcyhh5a', frmContact,'sWIdjc2pYZ9Zrgb9X').then(res=>{
-        console.log(res);
-        setContact(frmContact);
-        alert("ENVIADO!")
+        /*console.log(res);
+        setContact(frmContact);*/
+        alert("¡ENVIADO!")
       })
   }
 
@@ -113,10 +113,9 @@ const Formulario = () => {
           })}/>
           {errors.nombre?.type === 'required' && <p>El campo nombre es requerido</p>}
 
-        <InputForm type="text" name="apellidos" id='apellidos' placeholder="Apellidos*" {...register('apellidos', 
-          {required: true
+        <InputForm type="text" name="apellidos" id='apellidos' placeholder="Apellidos" {...register('apellidos', 
+          {required: false
           })}/>
-          {errors.apellidos?.type === 'required' && <p>El campo apellidos es requerido</p>}
 
         <InputForm type="text" name="email" id='email' placeholder="Correo electrónico*" {...register('email',
           {required: true, pattern: /\S+@\S+\.\S+/

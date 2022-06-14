@@ -3,7 +3,9 @@ import { FlexLayout } from "../../../../components/layouts/FlexLayout"
 import { SideMarginsLayout } from "../../../../components/layouts/SideMarginsLayout"
 import TopMarginLayout from "../../../../components/layouts/TopMarginLayout"
 import Titulo2 from "../../../../components/titulos/Titulo2"
-import Mas3 from "../../../../components/media/mas3.jpg"
+import Quiromasajistas from "../../../../components/media/quiromasajistas.jpg"
+import Kinesio from "../../../../components/media/kinesio.jpg"
+import Abdomen from "../../../../components/media/abdomen.jpg"
 import Titulo from "../../../../components/titulos/Titulo"
 import HalfLayout from "../../../../components/layouts/HalfLayout"
 import CiruclarImage from "../../../../components/animations/CiruclarImage"
@@ -135,7 +137,7 @@ const Quiromasaje = props => {
                         <STitulo>quiromasaje profesional</STitulo>
                         <Marg px="10" />
                     </FlexLayout>
-                    <SHeadImage src={Mas3} alt="" >
+                    <SHeadImage src={Quiromasajistas} alt="" >
                         <FlexLayout gap={10} vAlign='bottom' hAlign='center' fullHeight>
                             <SCaja>
                                 <div>
@@ -192,8 +194,8 @@ const Quiromasaje = props => {
                                 <FlexLayout vAlign='center' hAlign='center' fullHeight>
                                     <CiruclarImage
                                         scale={4}
-                                        img={Mas3}
-                                        alt="Mas3"
+                                        img={Kinesio}
+                                        alt="Kinesio"
                                     >
                                     </CiruclarImage>
                                 </FlexLayout>
@@ -366,8 +368,8 @@ const Quiromasaje = props => {
                 <div>
                 <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
-                        img={Mas3}
-                        alt="Mas3"
+                        img={Abdomen}
+                        alt="Abdomen"
                         scale={5}
                         hasText
                         hover

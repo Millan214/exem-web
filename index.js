@@ -5,6 +5,7 @@ import Auth, { AuthProvider } from './auth/AuthProvider';
 import Protegido from './auth/Protegido';
 import Admin from './pages/admin/Admin';
 import App from './pages/App';
+import Contacto from './pages/contacto/Contacto';
 import Cursos from './pages/formacion/cursos/Cursos';
 import Quiromasaje from './pages/formacion/cursos/quiromasaje/Quiromasaje';
 import Talleres from './pages/formacion/talleres/Talleres';
@@ -24,6 +25,8 @@ root.render(
           <Route path="/" element={<App />}>
 
             <Route index element={<LandingPage />} />
+            
+            <Route path='contacto' element={<Contacto />} />
 
             <Route path='quienes-somos' element={<QuienesSomos />} />
 
@@ -62,4 +65,3 @@ root.render(
     </AuthProvider>
   </React.StrictMode>
 );
-

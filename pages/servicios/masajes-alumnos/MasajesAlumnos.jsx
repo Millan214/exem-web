@@ -9,6 +9,7 @@ import Titulo2 from "../../../components/titulos/Titulo2"
 import ImgMasajesAlumnos from "../../../components/media/imgMasajesAlumnos.jpeg"
 import { SideMarginsLayout } from "../../../components/layouts/SideMarginsLayout"
 import Marg from "../../../components/layouts/Marg"
+import { Link } from "react-router-dom"
 
 /**
  * @param   
@@ -55,9 +56,16 @@ const MasajesAlumnos = props => {
 </SideMarginsLayout>
 
 <SideMarginsLayout>
-    <p>Para poder recibir mensajes de WhatsApp de las ofertas semanales en masajes con los alumnos en formación <strong>pincha aquí</strong> y facilítanos tu nombre y apellidos.</p>
-        <Marg px="10" />
-    <p>*Ten en cuenta que son alumnos que están aprendiendo y no podrán tratar dolencias más específicas.</p>
+            <Lista>
+                <ListaItem>
+    Para poder recibir mensajes de WhatsApp de las ofertas semanales en masajes con los alumnos en formación 
+    <Link style={{color: 'var(--secundario-light)'}} to="../../formacion/cursos/quiromasaje"> pincha aquí</Link> y facilítanos tu nombre y apellidos.
+                </ListaItem>
+            <Marg px="10" />
+                <ListaItem>
+    *Ten en cuenta que son alumnos que están aprendiendo y no podrán tratar dolencias más específicas.
+                </ListaItem>
+            </Lista>
 </SideMarginsLayout>
 
     </div>

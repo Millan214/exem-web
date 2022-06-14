@@ -11,6 +11,7 @@ import Espalda from '../../../components/media/espalda.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { useEffect } from "react";
 import Onda from "../../../components/ondas/Onda";
+import { Link } from "react-router-dom"
 
 /**
  * @param   
@@ -36,7 +37,8 @@ const Talleres = props => {
             </Onda>
             <VLayout margTop={100} up>
 
-                <div>
+            <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Espalda}
                         alt="espalda"
@@ -46,7 +48,9 @@ const Talleres = props => {
                     >
                         <h1>Masaje de espalda</h1>
                     </CiruclarImage>
+                </Link>
 
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Cuello}
                         alt="cuello"
@@ -56,9 +60,23 @@ const Talleres = props => {
                     >
                         <h1>Masaje cervical, cuello y facial</h1>
                     </CiruclarImage>
+                </Link>
+
+                <Link to="/formacion/cursos/quiromasaje">
+                    <CiruclarImage
+                        img={Cuello}
+                        alt="cuello"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Piedras calientes</h1>
+                    </CiruclarImage>
+                </Link>
                 </div>
 
                 <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Podal}
                         alt="podal"
@@ -68,7 +86,9 @@ const Talleres = props => {
                     >
                         <h1>Masaje podal</h1>
                     </CiruclarImage>
+                </Link>
 
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Piernas}
                         alt="piernas"
@@ -78,9 +98,9 @@ const Talleres = props => {
                     >
                         <h1>Masaje de piernas</h1>
                     </CiruclarImage>
-                </div>
+                </Link>
 
-                <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Estiramientos}
                         alt="estiramientos"
@@ -90,7 +110,11 @@ const Talleres = props => {
                     >
                         <h1>Movilizaciones y estiramientos</h1>
                     </CiruclarImage>
+                </Link>
+                </div>
 
+                <div>
+                <Link to="/formacion/cursos/quiromasaje">
                     <CiruclarImage
                         img={Vendaje}
                         alt="vendaje"
@@ -100,8 +124,32 @@ const Talleres = props => {
                     >
                         <h1>Vendaje neuromuscular (básico)</h1>
                     </CiruclarImage>
-                </div>
+                </Link>
 
+                <Link to="/formacion/cursos/quiromasaje">
+                    <CiruclarImage
+                        img={Estiramientos}
+                        alt="estiramientos"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Reductor</h1>
+                    </CiruclarImage>
+                </Link>
+
+                <Link to="/formacion/cursos/quiromasaje">
+                    <CiruclarImage
+                        img={Vendaje}
+                        alt="vendaje"
+                        scale={5}
+                        hasText
+                        hover
+                    >
+                        <h1>Ventosas</h1>
+                    </CiruclarImage>
+                </Link>
+                </div>
 
             </VLayout>
         </TopMarginLayout>
