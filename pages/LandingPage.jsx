@@ -6,7 +6,13 @@ import { ScreenHeightLayout } from "../components/layouts/ScreenHeightLayout";
 import { SideMarginsLayout } from "../components/layouts/SideMarginsLayout";
 import coverVideo from "../components/media/coverVideo.mp4";
 import Tarjeta from "../components/tarjeta/Tarjeta";
-import Person from '../components/media/person.jpg';
+
+import Persona2 from '../components/media/personas/Persona2.jpg';
+import Persona3 from '../components/media/personas/Persona3.jpg';
+import Persona4 from '../components/media/personas/Persona4.jpg';
+import Persona5 from '../components/media/personas/Persona5.jpg';
+import Persona6 from '../components/media/personas/Persona6.jpg';
+import Deportivo from '../components/media/deportivo.jpg';
 import Espalda from '../components/media/espalda.jpg';
 import Titulo from "../components/titulos/Titulo";
 import TarjetaGrande from "../components/tarjeta/TarjetaGrande";
@@ -15,7 +21,7 @@ import HalfLayout from "../components/layouts/HalfLayout";
 import Lista from "../components/listas/Lista";
 import ListaItem from "../components/listas/ListaItem";
 import { useEffect } from "react";
-import Clase from "../components/media/clase.jpg";
+import Estiramientos from "../components/media/estiramientos.jpg";
 import Formulario from "../components/formularios/Formulario";
 import Marg from "../components/layouts/Marg";
 import Titulo3 from "../components/titulos/Titulo3";
@@ -65,6 +71,11 @@ const CardContainer = styled.div`
   display: flex;
   position: relative;
   text-align: center;
+  /*
+  @media screen and (min-width: 480px){
+    box-shadow: none;
+  }
+  */
 `
 
 const ImageFull = styled.img`
@@ -72,6 +83,12 @@ const ImageFull = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+  /*
+  @media screen and (min-width: 480px){
+    display: none;
+  }
+  */
 `
 
 const ContenedorBanner1 = styled.div`
@@ -82,15 +99,29 @@ const ContenedorBanner1 = styled.div`
 	height: 100%;
 	float: left;
 	width: 60%;
+/*
+  @media screen and (min-width: 480px){
+    width: 100% !important;
+    text-align: center;
+    position: absolute;
+  }
+  */
 `
 
 const ContenedorBanner2 = styled.div`
 	display: inline-block;
 	position: relative;
 	overflow: hidden;
-  display: inline-block;
   height: 100%;
   width: 40%;
+/*
+  @media screen and (min-width: 480px){
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 18em;
+    display: flexbox;
+  }
+  */
 `
 
 const ParrafoBanner = styled.p`
@@ -163,13 +194,13 @@ const LandingPage = () => {
         <FlexLayout>
           <CardContainer>
 
-            <ImageFull src={Clase} alt="banner" />
+            <ImageFull src={Estiramientos} alt="estiramientos" />
 
             <ContenedorBanner1>
               <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
               <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
 
-              <ParrafoBanner>INICIO: 11 DE MAYO</ParrafoBanner>
+              <ParrafoBanner>INICIO: 25 DE JUNIO</ParrafoBanner>
             </ContenedorBanner1>
 
             <ContenedorBanner2>
@@ -198,8 +229,8 @@ const LandingPage = () => {
               <FlexLayout vAlign='center' hAlign='center' fullHeight>
                 <CiruclarImage
                   scale={4}
-                  img={Person}
-                  alt="person"
+                  img={Deportivo}
+                  alt="deportivo"
                 >
                 </CiruclarImage>
               </FlexLayout>
@@ -222,42 +253,42 @@ const LandingPage = () => {
 
       <ScreenHeightLayout>
         <FlexLayout vAlign={'center'} hAlign={'center'} fullheight column>
-          <Titulo>reseñas de nuestros clientes</Titulo>
+          <Titulo>opiniones de nuestros clientes</Titulo>
           <FlexLayout hAlign={'center'} wrap>
 
             <Tarjeta
-              imagen={Person}
-              nombre='Guillermo Rauch'
-              correo='guillermorauch@gmail.com'
+              imagen={Persona2}
+              nombre='Lucia Navarro shh'
+              correo='navarroch@gmail.com'
               comentario='Me siento muy bien atendida por parte de Jesica siempre atenta y amable.'
             />
 
             <Tarjeta
-              imagen={Person}
+              imagen={Persona3}
               nombre='Guillermo Rauch'
               correo='guillermorauch@gmail.com'
               comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
             />
 
             <Tarjeta
-              imagen={Person}
-              nombre='Guillermo Rauch'
-              correo='guillermorauch@gmail.com'
+              imagen={Persona4}
+              nombre='Maria'
+              correo='mmriagonzal19@gmail.com'
               comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
             />
 
             <Tarjeta
-              imagen={Person}
-              nombre='Guillermo Rauch'
-              correo='guillermorauch@gmail.com'
-              comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
+              imagen={Persona5}
+              nombre='jessica ruiz'
+              correo='jsdestroy@gmail.com'
+              comentario='Me ha encantado la experiencia. Volveré seguro'
             />
 
             <Tarjeta
-              imagen={Person}
-              nombre='Guillermo Rauch'
-              correo='guillermorauch@gmail.com'
-              comentario='Muy buen trato por parte de todos, y el masaje muy relajante.'
+              imagen={Persona6}
+              nombre='Sandra Reina'
+              correo='reinasandra_89@gmail.com'
+              comentario='Una gran escuela y trato excelente'
             />
 
           </FlexLayout>

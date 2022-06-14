@@ -2,7 +2,6 @@ import TopMarginLayout from "../../../components/layouts/TopMarginLayout"
 import CiruclarImage from "../../../components/animations/CiruclarImage"
 import { FlexLayout } from "../../../components/layouts/FlexLayout"
 import Titulo2 from "../../../components/titulos/Titulo2"
-import Person from '../../../components/media/person.jpg';
 import VLayout from "../../../components/layouts/VLayout";
 import { useEffect } from "react";
 import Onda from "../../../components/ondas/Onda";

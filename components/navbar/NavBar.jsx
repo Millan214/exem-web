@@ -170,7 +170,7 @@ const NavBar = () => {
                     servicios
                 </NavBarLink>
 
-                <NavBarLink to="/">contacto</NavBarLink>
+                <NavBarLink to="/contacto">contacto</NavBarLink>
 
                 <NavBarLink to="/quienes-somos">¿quienes somos?</NavBarLink>
 

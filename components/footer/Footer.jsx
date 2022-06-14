@@ -119,14 +119,14 @@ const InputContainer = styled.div`
     padding-bottom: 0.4em;
 `
 
-/*Enviar mensaje a WhatsApp de la empresa si se aceptan los terminos (de momento es mi tlf)*/
+/*Enviar mensaje a WhatsApp de la empresa si se aceptan los terminos*/
 function handleSubmit(e) {
     e.preventDefault();
     let mensaje = document.getElementById("mensaje").value
     let error = document.getElementById("error")
 
     if (e.target["aceptarTerminos"].checked) {
-        let URL= `https://api.whatsapp.com/send?phone=647804790&text=${mensaje}`
+        let URL= `https://api.whatsapp.com/send?phone=606989398&text=${mensaje}`
         window.open(URL, "_blank");
         error.innerHTML=""
     } else {

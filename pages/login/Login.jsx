@@ -1,11 +1,13 @@
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"
 import { FlexLayout } from "../../components/layouts/FlexLayout";
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 import { auth } from "../../firebase/firebaseInit"
 import Admin from "../admin/Admin"
 import mensaje from "../../components/mensajes/Mensaje";
+import Boton from "../../components/clickables/botones/Boton";
+import ExemTextIcon from "../../components/icons/ExemTextIcon";
 
 /**
  * @param   
@@ -49,7 +51,7 @@ const Login = props => {
         justify-content: center;
         align-items: center;
 
-        form{
+        form {
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -154,7 +156,14 @@ const Login = props => {
     }, [logged])
 
     return !logged ? (
+
         <SWrapper>
+ 
+                <Link style={{position: 'fixed', top: 0, right: 20}} to="/">
+                    <ExemTextIcon/>
+                </Link>
+            
+
             <FlexLayout column>
                 <form action="" onSubmit={handleSumbit} column>
                     <h1>¡Hola excelente!</h1>
