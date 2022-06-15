@@ -376,7 +376,7 @@ const Admin = props => {
             <Onda>
                 <FlexLayout vAlign='center' hAlign='center' column>
                     <Titulo2 pad={90} >
-                        bienbenido
+                        bienvenido
                     </Titulo2>
                     <Titulo2 pad={90} invert >
                         <SWhite>{auth.currentUser.email}</SWhite>

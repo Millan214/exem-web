@@ -167,6 +167,8 @@ const SIntroduceNombre = styled.div`
         outline: none;
         background-color: var(--color7);
 
+        z-index: 1000;
+
         border-radius: 0 0 50% 50%;
         border: 5px solid var(--color5);
         border-top: 0;

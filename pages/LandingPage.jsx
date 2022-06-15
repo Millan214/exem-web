@@ -68,9 +68,12 @@ const CardContainer = styled.div`
 	overflow: hidden;
 	height: 100vh;
 	width: 100%;
-  display: flex;
-  position: relative;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
   /*
   @media screen and (min-width: 480px){
     box-shadow: none;
@@ -79,6 +82,7 @@ const CardContainer = styled.div`
 `
 
 const ImageFull = styled.img`
+    z-index: -1;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -92,13 +96,7 @@ const ImageFull = styled.img`
 `
 
 const ContenedorBanner1 = styled.div`
-  position: relative;
-	text-align: left;
-	overflow: hidden;
-	padding: 30px;
-	height: 100%;
-	float: left;
-	width: 60%;
+  text-align: left;
 /*
   @media screen and (min-width: 480px){
     width: 100% !important;
@@ -109,11 +107,7 @@ const ContenedorBanner1 = styled.div`
 `
 
 const ContenedorBanner2 = styled.div`
-	display: inline-block;
-	position: relative;
-	overflow: hidden;
-  height: 100%;
-  width: 40%;
+	
 /*
   @media screen and (min-width: 480px){
     width: 100% !important;
@@ -191,24 +185,21 @@ const LandingPage = () => {
       </MarginTopAndBottom>
 
       <ScreenHeightLayout>
-        <FlexLayout>
-          <CardContainer>
+        <CardContainer>
 
-            <ImageFull src={Estiramientos} alt="estiramientos" />
+          <ImageFull src={Estiramientos} alt="estiramientos" />
 
-            <ContenedorBanner1>
-              <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
-              <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
+          <ContenedorBanner1>
+            <Titulo3>PRÓXIMA CONVOCATORIA</Titulo3>
+            <Titulo3>CURSO QUIROMASAJE PROFESIONAL</Titulo3>
+            <ParrafoBanner>INICIO: 25 DE JUNIO</ParrafoBanner>
+          </ContenedorBanner1>
 
-              <ParrafoBanner>INICIO: 25 DE JUNIO</ParrafoBanner>
-            </ContenedorBanner1>
+          <ContenedorBanner2>
+            <Formulario />
+          </ContenedorBanner2>
 
-            <ContenedorBanner2>
-              <Formulario />
-            </ContenedorBanner2>
-
-          </CardContainer>
-        </FlexLayout>
+        </CardContainer>
       </ScreenHeightLayout>
 
 
